@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Chola - Reservas</title>
+    <link href="./../css/styles.css" rel="stylesheet" type="text/css">
+    <link href="./../css/reservas.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+    <!-- Header Dinámico -->
+    <div id="header-container"></div>
+
+    <main>
+        <section class="reservas-section">
+            <form class="reservas-form">
+                <!-- Primera Fila: Nombre y Apellido -->
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="nombre">Nombres:</label>
+                        <input type="text" id="nombre" name="nombre" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="apellido">Apellido:</label>
+                        <input type="text" id="apellido" name="apellido" required>
+                    </div>
+                </div>
+
+                <!-- Segunda Fila: Email -->
+                <div class="form-row">
+                    <div class="form-group full-width">
+                        <label for="email">e-mail:</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                </div>
+
+                <!-- Tercera Fila: Número de Personas, Hora y Calendario -->
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="personas">Número de Personas:</label>
+                        <input type="number" id="personas" name="personas" min="1" required>
+                        <label for="hora">Hora:</label>
+                        <input type="time" id="hora" name="hora" required>
+                    </div>
+                    <div class="form-group calendar">
+                        <label for="fecha">Fecha:</label>
+                        <input type="date" id="fecha" name="fecha" required>
+                    </div>
+                </div>
+
+                <!-- Cuarta Fila: Preferencias Alimentarias -->
+                <div class="form-row">
+                    <div class="form-group full-width">
+                        <label for="restricciones">Preferencia o restricciones alimentarias:</label>
+                        <textarea id="restricciones" name="restricciones" rows="3"></textarea>
+                    </div>
+                </div>
+
+                <!-- Quinta Fila: Botón de Reservar -->
+                <div class="form-row">
+                    <button type="submit" class="reservar-btn">RESERVAR</button>
+                </div>
+            </form>
+        </section>
+    </main>
+
+    <!-- Footer Dinámico -->
+    <div id="footer-container"></div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            fetch("./header.html")
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById("header-container").innerHTML = data;
+                })
+                .catch(error => console.error("Error cargando el header:", error));
+
+            fetch("./footer.html")
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById("footer-container").innerHTML = data;
+                })
+                .catch(error => console.error("Error cargando el footer:", error));
+        });
+    </script>
+</body>
+</html>

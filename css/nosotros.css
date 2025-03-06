@@ -10,9 +10,9 @@ body {
     background-image: url('./../imgs/FONDOS/dark-wood-table-vertical\ 4.png');
     background-position: center;
     background-repeat: repeat;
+    background-blend-mode: saturation;
     /* background-blend-mode: multiply; */
     /* background-blend-mode: hard-light; */
-    background-blend-mode: saturation;
 }
 
 /* ---------- HEADER ---------- */
