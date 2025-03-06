@@ -1,0 +1,413 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: url('../imgs/FONDOS/fondo\ blanco\ degr.png');
+    background-size: cover;       /* La imagen cubrirá todo el fondo */
+    background-repeat: no-repeat; /* Evita que se repita la imagen */
+    background-position: center center; /* Centra la imagen en el fondo */
+}
+
+
+
+header {
+    background-color: black;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+/* Contenedor principal del slider */
+.slider {
+  width: 80%;               /* Ajusta el ancho según tus necesidades */
+  max-width: 1200px;        /* Ancho máximo opcional */
+  margin: 0 auto;           /* Centra horizontalmente */
+  position: relative;       /* Para poder posicionar las imágenes absolutamente */
+  height: 800px;            /* Altura fija (o ajusta según tus imágenes) */
+  overflow: hidden;         /* Oculta cualquier exceso de imagen */
+}
+
+/* El 'figure' agrupa todas las imágenes */
+.slider figure {
+  position: relative; 
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/* Cada imagen se posiciona absoluta y se va mostrando/ocultando con animación */
+.slider figure img {
+  position: absolute; 
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;        /* Asegura que ocupe toda la altura del slider */
+  object-fit: cover;   /* Cubre el espacio sin deformar la imagen */
+  opacity: 0;          /* Comienza invisible */
+  animation: fade 16s infinite ease-in-out;
+  /* 
+    16s: duración total de la animación
+    infinite: se repite indefinidamente
+    ease-in-out: transición suave
+  */
+}
+
+/* Para que cada imagen aparezca en distinto intervalo, usamos delays */
+.slider figure img:nth-child(1) {
+  animation-delay: 0s;
+}
+.slider figure img:nth-child(2) {
+  animation-delay: 4s;   /* Empieza 4 segundos después */
+}
+.slider figure img:nth-child(3) {
+  animation-delay: 8s;   /* Empieza 8 segundos después */
+}
+.slider figure img:nth-child(4) {
+  animation-delay: 12s;  /* Empieza 12 segundos después */
+}
+
+/* Definimos la animación 'fade' */
+@keyframes fade {
+  0% { opacity: 0; }    /* Al inicio está invisible */
+  10% { opacity: 1; }   /* En el 10% ya está visible */
+  90% { opacity: 1; }   /* Se mantiene visible hasta el 90% */
+  100% { opacity: 0; }  /* Se desvanece al 100% */
+}
+
+ .description-section {
+    margin: 50px auto 100px auto; 
+    /* ↑ margen superior de 50px, margen inferior de 100px */
+    padding: 60px 0; 
+    /* Quita la otra línea de padding: 100px; que está siendo sobrescrita */
+    width: 80%;
+    border-radius: 10px;
+    background: url('../imgs/FONDOS/Fondo piedra.png') no-repeat center center;
+    /* background-size: cover;  <-- Descomenta si quieres que se ajuste al contenedor */
+    text-align: center;
+    color: #333;
+}
+
+  /* Contenedor interno para controlar el ancho del texto */
+  .description {
+    /* Ajusta el ancho para que el texto no sea demasiado ancho */
+    width: 60%;
+    /* Centra horizontalmente */
+    margin: 0 auto;
+    /* Espacio interno */
+    padding: 20px 0;
+  }
+
+  .description p {
+    /* Ajusta el tamaño y el interlineado para una lectura agradable */
+    font-size: 1.2rem;
+    line-height: 1.5;
+    margin: 0;
+  }
+button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
+}
+.card-container {
+    max-width: 1250px;
+    margin: 2rem auto;
+    position: relative;
+  }
+  
+  .image-container {
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+  }
+  
+  .hover-zoom {
+    width: 100%;
+    height: auto;
+    transition: transform 0.5s ease;
+    display: block;
+  }
+  
+  .image-container:hover .hover-zoom {
+    transform: scale(1.1);
+  }
+  
+  .content-overlay {
+    position: absolute;
+    bottom: 20px; /* Nueva posición inferior */
+    right: 20px; /* Nueva posición derecha */
+    text-align: right; /* Alineación a la derecha */
+    z-index: 2;
+    pointer-events: none; /* Añadido para todo el overlay */
+  }
+
+  .paragraph {
+    color: white;
+    margin: 10px 0;
+    font-size: 1.1em;
+    pointer-events: auto; /* Permitir interacción */
+  }
+  
+  .title-hover {
+    color: white;
+    font-size: 2.5em;
+    margin-bottom: 1rem;
+    transition: color 0.3s ease;
+  }
+  
+  .btn-hover {
+    background: transparent;
+    border: 2px solid white;
+    color: white;
+    padding: 12px 30px;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  /* Efectos hover */
+  .title-hover:hover {
+    margin-bottom: 5px;
+    color: #ffd700; /* Cambiar por tu color deseado */
+  }
+  
+  .btn-hover:hover {
+    background: white;
+    color: #333;
+    border-color: transparent;
+  }
+  
+  /* Asegurar que el texto no se vea afectado por el zoom */
+  .content-overlay > * {
+    pointer-events: none;
+  }
+  
+  .btn-hover {
+    pointer-events: auto;
+  }
+  
+  .title-hover {
+    pointer-events: auto;
+  }
+
+
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    margin-left: 250px;
+    
+}
+
+.image-section img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+    
+}
+
+.text-section {
+    color: aliceblue;
+    max-width: 500px;
+    padding: 20px;
+}
+
+h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    font-family: 'Georgia', serif;
+}
+
+p {
+    font-size: 1em;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+.cta-button {
+    display: inline-block;
+    background-color: #FFC107; /* Cambia el color según tus preferencias */
+    color: #000;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.cta-button:hover {
+    background-color: #ff9800; /* Cambia el color al pasar el mouse */
+}
+
+/*para el catering*/
+
+.catering {
+    display: flex;
+    justify-content: space-between;
+    padding: 50px;
+    background: #333;
+}
+
+.content {
+    width: 50%;
+    padding: 20px;
+}
+
+.content h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+.content p {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.btn {
+    background-color: #ffcc00;
+    color: #333;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.images {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 45%;
+}
+
+.image {
+    background: #444;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.image h2 {
+    position: absolute;
+    color: white;
+    font-size: 24px;
+    text-align: center;
+}
+
+.buffet {
+    background-image: url('../imgs/plato-frt.png');
+    background-size: cover;
+}
+
+.degustaciones {
+    background-image: url('../imgs/plat-postre.png');
+    background-size: cover;
+}
+
+/*nostros */
+
+.container-nosotros {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background-image: url('../imgs/nosotros.png'); /* Añadir la URL de la imagen */
+    background-size: cover;
+    background-position: center;
+}
+
+.overlay-nosotros {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-align: center;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.5); /* Fondo oscuro semi-transparente */
+    border-radius: 10px;
+}
+
+h1 {
+    font-size: 3em;
+    margin-bottom: 20px;
+}
+
+p {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+}
+
+.btn {
+    padding: 10px 20px;
+    background-color: #4CAF50; /* Color del botón */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 1em;
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    background-color: #45a049; /* Color al pasar el ratón */
+}
+
+/*casi terminando*/
+
+.container-ult {
+    background-color: #333; /* Color de fondo de la sección */
+    color: white; /* Color del texto */
+    text-align: center; /* Centra el texto en los elementos del contenedor */
+    padding: 20px 0; /* Espaciado superior e inferior */
+}
+
+.header {
+    display: flex; /* Utiliza flexbox para alinear los elementos horizontalmente */
+    justify-content: center; /* Centra los elementos en el eje horizontal */
+}
+
+.icon {
+    margin: 0 20px; /* Espaciado lateral entre los iconos */
+}
+
+.icon img {
+    width: 60px; /* Ancho del icono */
+    height: auto; /* Mantiene la proporción del icono */
+}
+
+.icon p {
+    margin: 5px 0 0 0; /* Espaciado en la parte superior del texto */
+}

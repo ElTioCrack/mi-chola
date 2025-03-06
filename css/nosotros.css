@@ -1,0 +1,651 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Marcellus', serif;
+    background-color: rgba(0, 0, 0, 0.9); 
+    background-image: url('./../imgs/FONDOS/dark-wood-table-vertical\ 4.png');
+    background-position: center;
+    background-repeat: repeat;
+    /* background-blend-mode: multiply; */
+    /* background-blend-mode: hard-light; */
+    background-blend-mode: saturation;
+  }
+
+/* ---------- HEADER ---------- */
+.main-header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 50px;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), transparent);
+    z-index: 1000;
+}
+
+.logo {
+    width: 280px;
+    height: auto;
+}
+
+.main-nav {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.main-nav a {
+    text-decoration: none;
+    color: white;
+    font-weight: 300;
+    letter-spacing: 0.5px;
+    font-size: 1rem;
+    position: relative;
+    padding-bottom: 5px;
+    transition: color 0.3s;
+}
+
+.main-nav a:hover {
+    color: #7e8a22;
+}
+
+.main-nav a::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background-color: #7e8a22;
+    transition: width 0.3s, left 0.3s;
+}
+
+.main-nav a:hover::after {
+    width: 100%;
+    left: 0;
+}
+
+/* Selector de idioma */
+.language-selector {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    color: white;
+    position: relative;
+    padding-bottom: 5px;
+}
+
+.language-selector:hover span {
+    color: #7e8a22;
+}
+
+.language-selector::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background-color: #7e8a22;
+    transition: width 0.3s, left 0.3s;
+}
+
+.language-selector:hover::after {
+    width: 100%;
+    left: 0;
+}
+
+.language-icon {
+    width: 6px;
+    height: auto;
+    transform: rotate(90deg);
+    transition: transform 0.3s;
+}
+
+
+/* -------------------------------------------------------------------------- */
+/* Sección Nosotros */
+.nosotros {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background: url('./../imgs/nosotro-1.png') no-repeat center center;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    overflow: hidden;
+}
+
+/* Degradado de bordes negro al centro transparente */
+.nosotros::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(ellipse , rgba(0, 0, 0, 0) 33%, rgba(0, 0, 0, 1) 66%);
+    z-index: 1;
+}
+
+/* Contenedor del texto */
+.content {
+    position: absolute;
+    left: 5%;
+    bottom: 25%;
+    z-index: 2;
+    color: white;
+    font-family: 'Marcellus', serif;
+    user-select: none;
+}
+
+/* Texto "Nosotros" mucho más grande */
+.content h2 {
+    font-size: 9rem;
+    font-weight: 100;
+    letter-spacing: 2px;
+}
+
+/* Imagen decorativa */
+.decorative-img {
+    position: absolute;
+    bottom: -250px;
+    left: 250px;
+    width: 500px;
+    user-select: none;
+    pointer-events: none;
+    transform: translateY(0);
+}
+
+/* -------------------------------------------------------------------------- */
+/* Segunda sección */
+.segunda-seccion {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background: url('./../imgs/nosotros.png') no-repeat center center;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+/* Degradado de transparente (arriba izquierda) a negro (abajo derecha) */
+.segunda-seccion::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom right, rgba(0, 0, 0, 0) 0, rgba(0, 0, 0, 1) 90%);
+    z-index: 1;
+}
+
+/* Imagen adicional en la parte superior derecha */
+.extra-img {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    width: 200px; /* Ajusta el tamaño según necesites */
+    user-select: none;
+    pointer-events: none;
+    z-index: 2; /* Asegura que esté encima del degradado */
+}
+/* -------------------------------------------------------------------------- */
+/* Sección Tercera */
+.tercera-seccion {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    padding: 50px;
+    /* background: #000 */
+}
+
+/* Columna izquierda (Imagen) */
+.tercera-seccion .left {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: flex-start; /* Imagen arriba */
+    justify-content: flex-start; /* Imagen alineada a la izquierda */
+}
+
+.section-img {
+    width: 80%;
+    height: auto;
+    object-fit: cover;
+}
+
+/* Columna derecha (Texto) */
+.tercera-seccion .right {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* Texto arriba */
+    align-items: flex-end; /* Alinear texto a la derecha */
+    padding: 40px;
+    font-family: 'Marcellus', serif;
+    color: #fff;
+}
+
+/* Título mucho más grande */
+.section-title {
+    font-size: 6rem; /* Tres veces más grande que el texto */
+    font-weight: 100;
+    margin-bottom: 20px;
+    text-align: right;
+}
+
+/* Párrafos justificados a la derecha */
+.tercera-seccion p {
+    text-align: justify;
+    
+    font-size: 1.25rem;
+    line-height: 1.6;
+    margin-bottom: 15px;
+    width: 90%; /* Para que no ocupe todo el ancho */
+}
+/* Sección Cuarta */
+.cuarta-seccion {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    padding: 50px;
+    /* background: #000; */
+}
+
+/* Columnas desiguales */
+.cuarta-seccion .col {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: white;
+    font-family: 'Marcellus', serif;
+}
+
+/* Columna Izquierda (Misión) */
+.cuarta-seccion .left {
+    width: 40%;
+    text-align: left;
+    padding: 40px;
+}
+
+/* Párrafo con texto justificado */
+.cuarta-seccion p {
+    font-size: 1.25rem;
+    text-align: justify;
+    line-height: 1.6;
+    width: 90%;
+}
+
+/* Columna Derecha (Imagen circular más grande) */
+.cuarta-seccion .right {
+    width: 60%; /* Imagen más grande que el texto */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Contenedor de la imagen circular */
+.circle-container {
+    position: relative;
+    width: 800px;
+    height: 800px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+/* Imágenes dentro del círculo */
+.circle-img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    transition: opacity 0.5s ease-in-out;
+}
+
+/* Imagen por defecto visible */
+.default-img {
+    opacity: 1;
+}
+
+/* Imagen en hover */
+.hover-img {
+    opacity: 0;
+}
+
+/* Efecto hover: Cambia de imagen */
+.circle-container:hover .default-img {
+    opacity: 0;
+}
+
+.circle-container:hover .hover-img {
+    opacity: 1;
+}
+
+/* -------------------------------------------------------------------------- */
+
+/* -------------------------------------------------------------------------- */
+/* Sección Quinta */
+.quinta-seccion {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    padding: 50px;
+    /* background: #000; */
+}
+
+/* Columnas */
+.quinta-seccion .col {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: white;
+    font-family: 'Marcellus', serif;
+}
+
+/* Columna Izquierda (Imagen rectangular con hover) */
+.quinta-seccion .left {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Contenedor de la imagen rectangular (Ahora es vertical) */
+.rectangle-container {
+    position: relative;
+    width: 80%;  /* Más estrecho para ser vertical */
+    height: 90vh;  /* Ocupa casi toda la altura de la sección */
+    overflow: hidden;
+    border-radius: 20px; /* Bordes redondeados para un mejor diseño */
+}
+
+/* Imágenes dentro del rectángulo */
+.rectangle-img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: opacity 0.5s ease-in-out;
+}
+
+/* Imagen por defecto visible */
+.default-img {
+    opacity: 1;
+}
+
+/* Imagen en hover */
+.hover-img {
+    opacity: 0;
+}
+
+/* Efecto hover: Cambia de imagen */
+.rectangle-container:hover .default-img {
+    opacity: 0;
+}
+
+.rectangle-container:hover .hover-img {
+    opacity: 1;
+}
+
+/* Columna Derecha (Ahora dividida en 2 secciones) */
+.quinta-seccion .right {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 40px;
+    height: 100%;
+}
+
+/* Bloque de Visión y Valores */
+.text-block {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex: 1;
+}
+
+/* Título "Visión" alineado a la derecha */
+.vision-title {
+    font-size: 6rem; /* Más grande */
+    font-weight: 100;
+    text-align: right;
+    margin-bottom: 20px;
+}
+
+/* Texto "Visión" justificado */
+.vision-text {
+    font-size: 1.25rem;
+    text-align: justify;
+    line-height: 1.8;
+    margin-bottom: 40px;
+}
+
+/* Título "Valores" alineado a la izquierda */
+.valores-title {
+    font-size: 6rem; /* Más grande */
+    font-weight: 100;
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+/* Texto "Valores" alineado a la izquierda */
+.valores-text {
+    font-size: 1.25rem;
+    text-align: left;
+    line-height: 1.8;
+}
+
+
+/* -------------------------------------------------------------------------- */
+/* Sección Familia */
+.familia-seccion {
+    width: 100%;
+    min-height: 100vh;
+    padding: 50px 20px;
+    text-align: center;
+    /* background: #000 */
+    color: white;
+    font-family: 'Marcellus', serif;
+}
+
+/* Título */
+.section-title {
+    font-size: 6rem;
+    font-weight: 100;
+    position: relative;
+    margin-bottom: 30px;
+}
+
+/* Imagen subrayado */
+.underline-img {
+    position: relative;
+    width: 250px;
+    top: -10px; /* Ajusta la posición */
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* Grid de imágenes (2 columnas x 3 filas) */
+.familia-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: auto;
+    gap: 20px;
+    width: 75%;
+    margin: 1em auto;
+
+    justify-items: center
+}
+
+/* Contenedor de cada imagen */
+.familia-item {
+    position: relative;
+    width: 280px;
+    height: 280px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 10px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    cursor: pointer;
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Degradado tenue en la imagen */
+.familia-overlay {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 40%;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.6), transparent);
+    transition: height 0.3s ease-in-out, background 0.3s ease-in-out;
+}
+
+/* Efecto hover: el degradado sube e intensifica */
+.familia-item:hover {
+    transform: scale(1.05);
+}
+
+.familia-item:hover .familia-overlay {
+    height: 60%;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.9), transparent);
+}
+
+/* Texto dentro del cuadrado */
+.familia-nombre {
+    position: absolute;
+    bottom: 20px;
+    font-size: 1.3vw;
+    font-weight: bold;
+    text-align: center;
+    color: white;
+    z-index: 2;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8);
+}
+
+
+/* -------------------------------------------------------------------------- */
+/* Sección Testimonios */
+.testimonios-seccion {
+    width: 100%;
+    height: auto;
+    padding: 50px 20px;
+    text-align: center;
+    background: transparent;
+    font-family: 'Marcellus', serif;
+
+    /* background: #000 */
+}
+
+/* Contenedor de los testimonios */
+.testimonios-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+/* Tarjeta de testimonio */
+.testimonio-card {
+    width: 580px;
+    height: auto;
+    
+    border: 2px solid #83A187; /* Borde verde grisáceo */
+    border-radius: 15px;
+    background: transparent;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    
+    padding: 1em 0;
+}
+
+/* Texto del testimonio */
+.testimonio-text {
+    font-size: 1.2vw;
+    color: white;
+    line-height: 1.5;
+    margin-bottom: 20px;
+    padding: 0 1em;
+    
+}
+
+/* Contenedor de la imagen y los datos */
+.testimonio-info {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: center;
+
+    position: relative;
+    height: 100px;
+}
+
+/* Imagen circular */
+.testimonio-img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 15px;
+    position: absolute;
+    left: 15%;
+    z-index: 2;
+}
+
+/* Datos del testimonio */
+.testimonio-datos {
+    position: absolute;
+    height: 80%;
+    width: 80%;
+    right: 0;
+    
+    text-align: left;
+    background: rgba(127, 136, 140, 0.6); /* Color con opacidad */
+    padding: 0.5em ;
+    padding-left: 100px;
+
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
+
+/* Nombre */
+.nombre {
+    font-size: 1.4vw;
+    font-weight: bold;
+    color: white;
+    margin-bottom: 5px;
+}
+
+/* Cargo */
+.cargo {
+    font-size: 1vw;
+    color: white;
+}

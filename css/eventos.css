@@ -1,0 +1,271 @@
+/* Estilos para fuentes Lato y Marcellus */
+@font-face {
+    font-family: 'Lato';
+    src: url('../fonts/Lato/Lato-BlackItalic.ttf') format('truetype'); /* Ajusta la ruta según el nombre del archivo */
+}
+
+@font-face {
+    font-family: 'Marcellus';
+    src: url('../fonts/Marcellus/Marcellus-Regular.ttf') format('truetype'); /* Ajusta la ruta según el nombre del archivo */
+}
+/* Estilos generales */
+/* Establecer la imagen de fondo para toda la página */
+body {
+    background-image: url('../imgs/FONDOS/fondo blanco degr.png'); /* Ajusta la ruta según la ubicación */
+    background-size: cover; /* Asegura que la imagen cubra todo el fondo */
+    background-repeat: no-repeat; /* No repite la imagen */
+    background-position: center; /* Centra la imagen */
+    margin: 0; /* Elimina el margen por defecto */
+    padding: 0; /* Elimina el padding por defecto */
+    font-family: 'Lato', Arial, sans-serif; /* Mantiene la fuente */
+}
+
+/* Encabezado */
+header {
+    background-color: #333;
+    color: white;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h1 {
+    margin: 0;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-left: 20px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+.eventos {
+    font-family: 'Marcellus', serif; /* Fuente personalizada */
+    font-size: 4em; /* Tamaño de fuente grande */
+    color: #ffffff; /* Color del texto */
+    text-align: left; /* Alinear el texto a la izquierda */
+    margin: 20px 0; /* Margen arriba y abajo */
+    padding: 10px; /* Espaciado interno */
+    position: relative; /* Permite el posicionamiento absoluto de hijos si es necesario */
+    min-height: 200px; /* Altura mínima según tus necesidades */
+    border: 0px solid #000; /* Borde negro para visualización */
+}
+
+/* Secciones */
+.titulo-section {
+    background-image: url('../imgs/tecn-sens4.png'); /* Ajusta la ruta según la ubicación */
+    background-size: cover; /* Asegura que la imagen cubra todo el fondo */
+    background-repeat: no-repeat; /* No repite la imagen */
+    background-position: center; /* Centra la imagen */
+    padding: 20px;
+    background-color: white;
+    margin: 20px;
+    border-radius: 8px;
+    height: 400px; /* Ajusta la altura según tus necesidades */
+}
+
+.eventos-section {
+    padding: 20px;
+    
+    margin: 20px;
+    border-radius: 8px;
+}
+.parrafo {
+    text-align: center; /* Centrar el texto */
+    color: #ffffff; /* Color blanco para el texto */
+    margin: 20px 0; /* Espaciado arriba y abajo */
+    font-size: 1.2em; /* Ajusta el tamaño de la fuente según sea necesario */
+}
+
+.cuadrito {
+    background-color: rgba(255, 255, 255, 0.2); /* Fondo semitransparente */
+    padding: 50px; /* Espacio interno del cuadro */
+    border-radius: 8px; /* Bordes redondeados */
+    border: 2px solid #ffffff; /* Borde blanco */
+    margin: 20px auto; /* Espaciado arriba y abajo, y centrar horizontalmente */
+    max-width: 400px; /* Ancho máximo del cuadro */
+    text-align: center; /* Centrar todo el contenido dentro del cuadro */
+}
+
+.cuadrito ul {
+    list-style-type: none; /* Quitar viñetas */
+    padding: 0; /* Sin padding */
+    margin: 0; /* Sin margen */
+    color: #ffffff; /* Color blanco para los elementos de la lista */
+     text-align: center; /* Centrar todo el contenido dentro del cuadro */
+}
+
+#eventos {
+    display: flex; /* Disposición en flexbox */
+    justify-content: space-between; /* Espacio entre elementos */
+    align-items: center; /* Alinear verticalmente al centro */
+    padding: 20px; /* Espaciado interno */
+ 
+    border-radius: 8px; /* Bordes redondeados */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Sombra */
+}
+
+.evento-texto {
+    flex: 1; /* Ocupa el espacio disponible */
+    margin-right: 20px; /* Espacio a la derecha */
+}
+
+.evento-imagen img {
+    max-width: 650px; /* Ancho máximo de la imagen */
+    border-radius: 8px; /* Bordes redondeados para la imagen */
+}
+
+/* Media Query para pantallas pequeñas */
+@media (max-width: 768px) {
+    #eventos {
+        flex-direction: column; /* Cambia a columna en pantallas pequeñas */
+        align-items: flex-start; /* Alinea al inicio */
+    }
+
+    .evento-texto {
+        margin-right: 0; /* Elimina margen derecho */
+        margin-bottom: 20px; /* Espacio inferior */
+    }
+
+    .evento-imagen img {
+        max-width: 100%; /* Imagen ocupa todo el ancho disponible */
+    }
+}
+
+.titulo-section1{
+    background-image: url('../imgs/tecno-sens.png'); /* Ajusta la ruta según la ubicación */
+    background-size: cover; /* Asegura que la imagen cubra todo el fondo */
+    background-repeat: no-repeat; /* No repite la imagen */
+    background-position: center; /* Centra la imagen */
+    padding: 20px;
+    background-color: white;
+    margin: 20px;
+    border-radius: 8px;
+    height: 400px; /* Ajusta la altura según tus necesidades */
+}
+
+
+.form-section {
+    position: relative;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 8px;
+    background-color: rgba(0, 0, 0, 0.5); /* Color negro con 50% de opacidad */
+}
+
+.form-section::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-image: url('../imgs/flor-plt.png'); /* Ruta de la imagen */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 0.5; /* Opacidad de la imagen */
+    z-index: 0; /* Detrás del contenido */
+}
+
+.form-section > * {
+    position: relative;
+    z-index: 1; /* Por encima del pseudo-elemento */
+    color: white; /* Color de texto para contraste */
+}
+
+
+
+.form-container {
+   
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra */
+    width: 90%;
+    max-width: 70%; /* Ancho máximo del formulario */
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px; /* Espacio entre los grupos de formulario */
+}
+
+.form-group.full-width {
+    flex-basis: 100%; /* Ocupa todo el ancho para el botón */
+}
+
+.form-row {
+    display: flex; /* Disposición en filas */
+    justify-content: space-between; /* Espacio entre columnas */
+}
+
+label {
+    margin-bottom: 5px; /* Espacio entre la etiqueta y el campo */
+    font-weight: bold; /* Negrita para las etiquetas */
+}
+
+input {
+    width: 200%; /* Ancho */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px; /* Tamaño de fuente */
+}
+select{
+    width: 50%; /* Ancho */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px; /* Tamaño de fuente */
+}
+textarea{
+    width: 120%; /* Ancho */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px; /* Tamaño de fuente */
+}
+
+button {
+    padding: 10px;
+    background-color: #333; /* Color oscuro */
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 50%; /* Botón ocupa el ancho completo */
+}
+
+button:hover {
+    background-color: #555; /* Color más claro al pasar el ratón */
+}
+/* Pie de página */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+.footer-info {
+    margin-bottom: 10px;
+}
+
+.social-media a {
+    margin: 0 10px;
+    color: white;
+    text-decoration: none;
+}
