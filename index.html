@@ -3,24 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mi Chola Restaurante</title>
+    <title>Mi Chola - Inicio</title>
+    <link href="./css/styles.css" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" href="css/index.css">
 </head>
 <body>
-    <header>
-        <div class="logo">MI CHOLA RESTAURANTE</div>
-        <nav>
-            <ul>
-                <li><a href="#">Inicio</a></li>
-                <li><a href="#">Menús</a></li>
-                <li><a href="#">Servicios de Catering</a></li>
-                <li><a href="#">Eventos</a></li>
-                <li><a href="#">Exposición de Arte</a></li>
-                <li><a href="#">Nosotros</a></li>
-                <li><a href="#">Reservas</a></li>
-            </ul>
-        </nav>
-    </header>
+    
     <main>
         <section class="slider">
             <figure>
@@ -115,5 +103,33 @@
 
         <script src="script.js"></script>
     </main>
+
+
+    <div id="header-container"></div>
+    <div id="footer-container"></div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        fetch("./pages/header.html")
+          .then((response) => response.text())
+          .then((data) => {
+            document.getElementById("header-container").innerHTML = data;
+          })
+          .catch((error) => console.error("Error cargando el footer:", error));
+        fetch("./pages/footer.html")
+          .then((response) => response.text())
+          .then((data) => {
+            document.getElementById("footer-container").innerHTML = data;
+          })
+          .catch((error) => console.error("Error cargando el footer:", error));
+      });
+    </script>
+
+    <script type="text/javascript">
+      function mostrarMensaje(nombre) {
+        console.log("Hiciste click en: " + nombre);
+      }
+    </script>
+
 </body>
 </html>

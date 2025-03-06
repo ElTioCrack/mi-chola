@@ -1,0 +1,114 @@
+/* -------------------------------------------------------------------------- */
+/* Primera Sección: Hero Section */
+.hero-section {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background: url('./../imgs/Group 230 (1).png') no-repeat center center/cover;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    padding: 50px;
+    color: white;
+}
+
+/* Degradado en la imagen */
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), transparent);
+}
+
+/* Título */
+.hero-title {
+    position: absolute;
+    bottom: 15%;
+    left: 5%;
+    font-size: 6vw;
+    font-weight: 100;
+    font-family: 'Marcellus', serif;
+}
+
+/* Subrayado */
+.underline-img {
+    position: absolute;
+    bottom: 13%;
+    left: 5%;
+    width: 200px;
+}
+
+/* Texto alineado al centro */
+.hero-text {
+    position: absolute;
+    bottom: 5%;
+    right: 5%;
+    font-size: 1.5vw;
+    text-align: center;
+    max-width: 400px;
+}
+
+/* -------------------------------------------------------------------------- */
+/* Segunda Sección: Video */
+.video-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 50px;
+    width: 100%;
+    height: 100vh;
+    background: #000;
+    color: white;
+}
+
+/* Columna de texto */
+.video-text {
+    width: 33%;
+    text-align: center;
+}
+
+/* Contenedor del video */
+.video-container {
+    width: 66%;
+    height: 60vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* -------------------------------------------------------------------------- */
+/* Tercera Sección: Galería */
+.gallery-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 50px;
+    width: 100%;
+    height: 100vh;
+    background: #222;
+    color: white;
+}
+
+/* Columna de texto */
+.gallery-text {
+    width: 40%;
+    text-align: left;
+}
+
+/* Contenedor de la galería */
+.gallery-container {
+    width: 60%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Imagen (Preparada para carrusel en el futuro) */
+.gallery-img {
+    width: 80%;
+    height: auto;
+    border-radius: 10px;
+    object-fit: cover;
+}

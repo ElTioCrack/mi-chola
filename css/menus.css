@@ -1,0 +1,1034 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background-color: #111;
+    color: white;
+}
+
+/* header {
+    padding: 15px 20px;
+    background-color: #000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #333;
+}
+
+.logo {
+    width: 200px;
+    height: auto;
+    overflow: hidden;
+    margin-left: 40px;
+}
+
+.logo img {
+    width: 100%;
+    height: auto;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav ul li {
+    margin-left: 20px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    text-transform: uppercase;
+} */
+
+.main-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 150px;
+}
+
+.hero {
+    text-align: left;
+    position: relative;
+    margin-bottom: 50px;
+}
+
+.hero h1 {
+    font-size: 48px;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.hero-image {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.hero-image .main-plate {
+    width: 350px;
+    height: 350px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.side-plates {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.side-plates img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.hero-description {
+    max-width: 400px;
+    margin-left: 0;
+    text-align: left;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.navigation-arrows {
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    justify-content: space-between;
+    padding: 0 10px;
+}
+
+.arrow {
+    font-size: 24px;
+    cursor: pointer;
+    background: none;
+    border: none;
+    color: white;
+}
+
+.menu-section {
+    margin-top: 30px;
+    padding-bottom: 30px;
+}
+
+.menu-section h2 {
+    font-size: 32px;
+    text-align: center;
+    margin-bottom: 30px;
+    position: relative;
+}
+
+.menu-section h2:after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 2px;
+    background-color: #8B7D39;
+}
+
+.menu-option {
+    background-color: rgba(0, 0, 0, 0.5);
+    border: 1px solid #8B7D39;
+    border-radius: 5px;
+    padding: 20px;
+    margin-bottom: 30px;
+}
+
+.menu-option h3 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 20px;
+}
+
+.menu-details {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.menu-item {
+    text-align: center;
+    flex: 1;
+}
+
+.menu-item-title {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.menu-item-description {
+    font-size: 14px;
+    color: #ddd;
+}
+
+.price-reserve {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 30px;
+}
+
+.price {
+    background-color: rgba(0, 0, 0, 0.5);
+    border: 1px solid #8B7D39;
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+
+.reserve-btn {
+    background-color: #8B7D39;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.plate-structure {
+    background-color: #111;
+    padding: 20px 0;
+    margin-top: 30px;
+}
+
+.plate-structure h2 {
+    padding: 15px;
+    background-color: #eee;
+    color: #000;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.plate-details {
+    position: relative;
+    padding: 20px;
+}
+
+.plate-item {
+    display: block;
+    margin-bottom: 40px;
+    position: relative;
+}
+
+.plate-item-title {
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+.plate-image {
+    width: 250px;
+    height: 250px;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+.plate-arrow {
+    position: absolute;
+    width: 50px;
+    height: 2px;
+    background-color: #666;
+}
+
+.arrow-label {
+    position: absolute;
+    font-size: 14px;
+}
+
+.ingredients {
+    background-color: #111;
+    padding: 20px 0;
+    margin-top: 30px;
+}
+
+.ingredients h2 {
+    padding: 15px;
+    background-color: #eee;
+    color: #000;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.ingredients-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+}
+
+.ingredient-card {
+    border: 1px solid #8B7D39;
+    border-radius: 5px;
+    padding: 15px;
+    width: 250px;
+}
+
+.ingredient-image {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+
+.ingredient-name {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.ingredient-description {
+    font-size: 12px;
+    color: #ddd;
+}
+
+.wine-pairing {
+    padding: 20px;
+    margin-top: 30px;
+}
+
+.wine-pairing h3 {
+    position: relative;
+    margin-bottom: 40px;
+    font-size: 24px;
+}
+
+.wine-pairing h3:after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 60px;
+    height: 2px;
+    background-color: #8B7D39;
+}
+
+.wine-grid {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.wine-card {
+    text-align: center;
+    position: relative;
+}
+
+.wine-image {
+    width: 80px;
+    height: 200px;
+    object-fit: cover;
+    margin-bottom: 10px;
+    display: block;
+    margin: 0 auto;
+}
+
+.wine-info {
+    position: relative;
+    z-index: 2;
+}
+
+.wine-circle {
+    position: absolute;
+    width: 180px;
+    height: 180px;
+    background-color: #8B7D39;
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+}
+
+.wine-type {
+    font-weight: bold;
+    margin-bottom: 5px;
+    position: relative;
+    z-index: 2;
+    color: white;
+}
+
+.wine-description {
+    font-size: 12px;
+    color: white;
+    position: relative;
+    z-index: 2;
+}
+
+.wine-price {
+    margin-top: 10px;
+    font-weight: bold;
+    position: relative;
+    z-index: 2;
+}
+
+/* footer {
+    background-color: black;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+    font-family: Arial, sans-serif;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.contact-info,
+.hours,
+.social-icons {
+    flex: 1;
+    text-align: left;
+    min-width: 200px;
+    margin: 10px;
+}
+
+.contact-info .info-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.footer-logo {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.footer-logo img {
+    width: 550px;
+    height: auto;
+}
+
+.hours strong {
+    font-size: 16px;
+    font-weight: bold;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.hours p {
+    margin-bottom: 8px;
+}
+
+.social-icons {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    margin-top: 15px;
+}
+
+.social-icon {
+    width: 30px;
+    height: 30px;
+    display: inline-block;
+    transition: transform 0.3s ease;
+    font-size: 24px;
+    color: white;
+    text-decoration: none;
+}
+
+.social-icon:hover {
+    transform: scale(1.1);
+}
+
+.footer-bottom {
+    text-align: center;
+    font-size: 12px;
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 1px solid #333;
+    max-width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}  */
+
+.allergen-info {
+    font-size: 12px;
+    text-align: center;
+    padding: 20px;
+    color: #aaa;
+}
+
+.contact-info img {
+    width: 20px;
+    height: auto;
+}
+
+.main-plate {
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.side-plates img {
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+.side-plates img.hover-effect {
+    transform: scale(1.1);
+    opacity: 0.9;
+}
+
+.fade-out {
+    opacity: 0;
+    transform: scale(0.95);
+}
+
+.fade-in {
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.arrow {
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.arrow:hover {
+    background: rgba(0, 0, 0, 0.8);
+}
+
+.side-plates img {
+    opacity: 0.7;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 28px;
+    color: #333;
+    position: relative;
+}
+
+h2:after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 300px;
+    height: 2px;
+    background-color: #333;
+}
+
+.carousel-container {
+    position: relative;
+    max-width: 100%;
+    overflow: hidden;
+}
+
+.carousel {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.ingredient-card {
+    min-width: 280px;
+    margin: 0 10px;
+    padding: 15px;
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    border: 2px solid #e0e0a0;
+    flex: 0 0 calc(25% - 20px);
+}
+
+.ingredient-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+.ingredient-image {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.ingredient-name {
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 10px;
+    color: #555;
+    font-size: 18px;
+}
+
+.ingredient-description {
+    font-size: 14px;
+    color: #666;
+    line-height: 1.5;
+    text-align: center;
+}
+
+.nav-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(255, 255, 255, 0.7);
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    font-size: 24px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    z-index: 10;
+    transition: all 0.3s ease;
+}
+
+.nav-btn:hover {
+    background-color: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.prev-btn {
+    left: 10px;
+}
+
+.next-btn {
+    right: 10px;
+}
+
+@media (max-width: 1200px) {
+    .ingredient-card {
+        flex: 0 0 calc(33.333% - 20px);
+    }
+}
+
+@media (max-width: 992px) {
+    .ingredient-card {
+        flex: 0 0 calc(50% - 20px);
+    }
+}
+
+@media (max-width: 576px) {
+    .ingredient-card {
+        flex: 0 0 calc(100% - 20px);
+    }
+}
+
+h2:after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 300px;
+    height: 2px;
+    background-color: #333;
+}
+
+.carousel-wrapper {
+    position: relative;
+    width: 100%;
+    padding: 0 50px;
+    margin: 40px 0;
+}
+
+.carousel-container {
+    width: 100%;
+    overflow: hidden;
+}
+
+.carousel {
+    display: flex;
+    transition: transform 0.5s ease;
+    width: 100%;
+}
+
+.wine-card {
+    position: relative;
+    flex: 0 0 20%;
+    padding: 0 10px;
+    text-align: center;
+    min-width: 220px;
+}
+
+.wine-circle {
+    position: absolute;
+    width: 180px;
+    height: 180px;
+    background-color: rgba(192, 186, 77, 0.7);
+    border-radius: 50%;
+    top: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+}
+
+.wine-image {
+    position: relative;
+    height: 240px;
+    margin: 0 auto;
+    display: block;
+    z-index: 2;
+}
+
+.wine-info {
+    margin-top: 15px;
+    padding: 10px;
+}
+
+.wine-type {
+    font-weight: bold;
+    margin-bottom: 8px;
+    color: #333;
+    font-size: 14px;
+    line-height: 1.3;
+    height: 40px;
+}
+
+.wine-description {
+    font-size: 12px;
+    color: #666;
+    margin-bottom: 8px;
+    line-height: 1.4;
+}
+
+.wine-price {
+    font-weight: bold;
+    color: #333;
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+.nav-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+    transition: background-color 0.3s;
+}
+
+.nav-btn:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.prev-btn {
+    left: 10px;
+}
+
+.next-btn {
+    right: 10px;
+}
+
+@media (max-width: 1200px) {
+    .wine-card {
+        flex: 0 0 25%;
+    }
+}
+
+@media (max-width: 992px) {
+    .wine-card {
+        flex: 0 0 33.333%;
+    }
+}
+
+@media (max-width: 768px) {
+    .wine-card {
+        flex: 0 0 50%;
+    }
+}
+
+@media (max-width: 576px) {
+    .wine-card {
+        flex: 0 0 100%;
+    }
+
+    .carousel-wrapper {
+        padding: 0 30px;
+    }
+}
+
+.plate-structure {
+    background-color: #111;
+    color: white;
+    padding: 40px 20px;
+    position: relative;
+    margin-top: 30px;
+}
+
+.Native-seccion {
+    background-color: #f7f2ed;
+    color: white;
+    padding: 40px 20px;
+    position: relative;
+    margin-top: 30px;
+    margin-bottom: 0;
+    /* Elimina cualquier margen inferior */
+    width: 100vw;
+    /* Ocupa todo el ancho de la ventana */
+    left: 50%;
+    /* Mueve la sección para que ocupe todo el ancho */
+    right: 50%;
+    /* Similar a la propiedad left */
+    transform: translateX(-50%);
+    /* Centra la sección */
+    box-sizing: border-box;
+    /* Asegura que el padding no afecte el tamaño total */
+    height: auto;
+    /* Se ajusta al contenido */
+}
+
+.plate-structure h2 {
+    text-align: center;
+    font-size: 28px;
+    margin-bottom: 40px;
+    position: relative;
+    color: #fff;
+}
+
+.plate-structure h2:after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 220px;
+    height: 2px;
+    background-color: #5a9367;
+}
+
+.plate-details {
+    position: relative;
+    padding: 20px;
+}
+
+.plate-item-title {
+    margin-bottom: 20px;
+    font-size: 18px;
+}
+
+.right-aligned {
+    text-align: right;
+    margin-top: 20px;
+}
+
+.plate-image-wrapper {
+    position: relative;
+    display: inline-block;
+    margin-bottom: 60px;
+}
+
+.plate-image {
+    max-width: 100%;
+    height: auto;
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.plate-item-huariata {
+    position: relative;
+    margin-top: 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+/* Arrows and descriptions */
+.dish-arrow {
+    display: flex;
+    align-items: center;
+    position: absolute;
+}
+
+.right-arrow {
+    top: 40%;
+    left: 260px;
+}
+
+.bottom-arrow {
+    top: 280px;
+    left: 50px;
+}
+
+.left-arrow {
+    top: 40%;
+    right: 260px;
+}
+
+.bottom-right-arrow {
+    top: 280px;
+    right: 80px;
+}
+
+.arrow-oval {
+    width: 80px;
+    height: 40px;
+    background-color: #111;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.arrow-line {
+    width: 60%;
+    height: 2px;
+    background-color: #fff;
+    position: relative;
+}
+
+.arrow-line::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: -4px;
+    width: 10px;
+    height: 10px;
+    border-top: 2px solid #fff;
+    border-right: 2px solid #fff;
+    transform: rotate(45deg);
+}
+
+.left-line::after {
+    left: 0;
+    right: auto;
+    transform: rotate(-135deg);
+}
+
+.diagonal {
+    transform: rotate(45deg);
+}
+
+.diagonal::after {
+    transform: rotate(45deg);
+}
+
+.diagonal-right {
+    transform: rotate(-45deg);
+}
+
+.diagonal-right::after {
+    transform: rotate(45deg);
+}
+
+.dish-description {
+    margin-left: 20px;
+    max-width: 300px;
+}
+
+.text-right {
+    margin-right: 20px;
+    margin-left: 0;
+    text-align: right;
+}
+
+.dish-label {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.dish-text {
+    font-size: 12px;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .plate-item-huariata {
+        align-items: center;
+    }
+
+    .right-aligned {
+        text-align: center;
+    }
+
+    .dish-arrow {
+        position: relative;
+        margin: 20px auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        top: auto;
+        left: auto;
+        right: auto;
+    }
+
+    .text-right {
+        text-align: center;
+        margin: 0 0 20px 0;
+    }
+
+    .bottom-arrow,
+    .bottom-right-arrow {
+        margin-top: 30px;
+    }
+
+    .plate-image-wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+.ingredients {
+    background-color: #f4f4f4;
+    padding: 20px 0;
+    margin-top: 30px;
+}
+
+.wine-pairing {
+    background-color: #f4f4f4;
+    padding: 20px;
+    margin-top: 30px;
+}

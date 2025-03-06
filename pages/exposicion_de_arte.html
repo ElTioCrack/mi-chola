@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Chola - Exposición de Arte</title>
+    <link href="./../css/styles.css" rel="stylesheet" type="text/css">
+    <link href="./../css/exposicion_de_arte.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+    <!-- Header Dinámico -->
+    <div id="header-container"></div>
+
+    <main>
+        <!-- Primera Sección -->
+        <section class="hero-section">
+            <div class="hero-overlay"></div>
+            <h1 class="hero-title">Exposición <br/> de Arte</h1>
+            <img src="./../imgs/MARCA - PICTOGRAMAS/Recurso 12 4.png" alt="Subrayado" class="underline-img">
+            <p class="hero-text">En “Mi Chola” contamos con un espacio de exposición de pinturas de artistas Bolivianos, lugar que se convierte en una experiencia de disfrutar el arte junto con un vino o un plato para los comensales.</p>
+        </section>
+
+        <!-- Segunda Sección -->
+        <section class="video-section">
+            <div class="video-text">
+                <h2>Explora el Arte en Movimiento</h2>
+                <p>Exposiciones de derentes artistas como:</p>
+                <ul>
+                    <li>Sofia Monrroy</li>
+                    <li>Alvaro Wallas</li>
+                    <li>Cristian Layme (internacional)</li>
+                    <li>Raul Tola</li>
+                    <li>Etc.</li>
+                </ul>
+            </div>
+            <div class="video-container">
+                <iframe width="100%" height="100%" src="https://youtube.com/shorts/K6R6s0JTq8A?feature=share" frameborder="0" allowfullscreen></iframe>
+            </div>
+        </section>
+
+        <!-- Tercera Sección -->
+        <section class="gallery-section">
+            <div class="gallery-text">
+                <h2>Galería de Obras</h2>
+                <p>Sumérgete en una colección de arte excepcional que te transportará a diferentes mundos visuales.</p>
+            </div>
+            <div class="gallery-container">
+                <img src="./../imgs/cuadro1.png" alt="Galería de Arte" class="gallery-img">
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer Dinámico -->
+    <div id="footer-container"></div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            fetch("./header.html")
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById("header-container").innerHTML = data;
+                })
+                .catch(error => console.error("Error cargando el header:", error));
+
+            fetch("./footer.html")
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById("footer-container").innerHTML = data;
+                })
+                .catch(error => console.error("Error cargando el footer:", error));
+        });
+    </script>
+</body>
+</html>

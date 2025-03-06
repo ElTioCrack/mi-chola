@@ -6,110 +6,17 @@
 
 body {
     font-family: 'Marcellus', serif;
-    background-color: rgba(0, 0, 0, 0.9); 
+    background-color: rgba(0, 0, 0, 0.9);
     background-image: url('./../imgs/FONDOS/dark-wood-table-vertical\ 4.png');
     background-position: center;
     background-repeat: repeat;
     /* background-blend-mode: multiply; */
     /* background-blend-mode: hard-light; */
     background-blend-mode: saturation;
-  }
+}
 
 /* ---------- HEADER ---------- */
-.main-header {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 150px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 10px 50px;
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), transparent);
-    z-index: 1000;
-}
 
-.logo {
-    width: 280px;
-    height: auto;
-}
-
-.main-nav {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-}
-
-.main-nav a {
-    text-decoration: none;
-    color: white;
-    font-weight: 300;
-    letter-spacing: 0.5px;
-    font-size: 1rem;
-    position: relative;
-    padding-bottom: 5px;
-    transition: color 0.3s;
-}
-
-.main-nav a:hover {
-    color: #7e8a22;
-}
-
-.main-nav a::after {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    width: 0;
-    height: 2px;
-    background-color: #7e8a22;
-    transition: width 0.3s, left 0.3s;
-}
-
-.main-nav a:hover::after {
-    width: 100%;
-    left: 0;
-}
-
-/* Selector de idioma */
-.language-selector {
-    display: flex;
-    align-items: center;
-    gap: 5px;
-    cursor: pointer;
-    font-size: 1rem;
-    color: white;
-    position: relative;
-    padding-bottom: 5px;
-}
-
-.language-selector:hover span {
-    color: #7e8a22;
-}
-
-.language-selector::after {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    width: 0;
-    height: 2px;
-    background-color: #7e8a22;
-    transition: width 0.3s, left 0.3s;
-}
-
-.language-selector:hover::after {
-    width: 100%;
-    left: 0;
-}
-
-.language-icon {
-    width: 6px;
-    height: auto;
-    transform: rotate(90deg);
-    transition: transform 0.3s;
-}
 
 
 /* -------------------------------------------------------------------------- */
@@ -134,7 +41,7 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: radial-gradient(ellipse , rgba(0, 0, 0, 0) 33%, rgba(0, 0, 0, 1) 66%);
+    background: radial-gradient(ellipse, rgba(0, 0, 0, 0) 33%, rgba(0, 0, 0, 1) 66%);
     z-index: 1;
 }
 
@@ -198,11 +105,14 @@ body {
     position: absolute;
     top: 0px;
     right: 0px;
-    width: 200px; /* Ajusta el tamaño según necesites */
+    width: 200px;
+    /* Ajusta el tamaño según necesites */
     user-select: none;
     pointer-events: none;
-    z-index: 2; /* Asegura que esté encima del degradado */
+    z-index: 2;
+    /* Asegura que esté encima del degradado */
 }
+
 /* -------------------------------------------------------------------------- */
 /* Sección Tercera */
 .tercera-seccion {
@@ -220,8 +130,10 @@ body {
     width: 50%;
     height: 100%;
     display: flex;
-    align-items: flex-start; /* Imagen arriba */
-    justify-content: flex-start; /* Imagen alineada a la izquierda */
+    align-items: flex-start;
+    /* Imagen arriba */
+    justify-content: flex-start;
+    /* Imagen alineada a la izquierda */
 }
 
 .section-img {
@@ -235,8 +147,10 @@ body {
     width: 50%;
     display: flex;
     flex-direction: column;
-    justify-content: flex-start; /* Texto arriba */
-    align-items: flex-end; /* Alinear texto a la derecha */
+    justify-content: flex-start;
+    /* Texto arriba */
+    align-items: flex-end;
+    /* Alinear texto a la derecha */
     padding: 40px;
     font-family: 'Marcellus', serif;
     color: #fff;
@@ -244,7 +158,8 @@ body {
 
 /* Título mucho más grande */
 .section-title {
-    font-size: 6rem; /* Tres veces más grande que el texto */
+    font-size: 6rem;
+    /* Tres veces más grande que el texto */
     font-weight: 100;
     margin-bottom: 20px;
     text-align: right;
@@ -253,12 +168,14 @@ body {
 /* Párrafos justificados a la derecha */
 .tercera-seccion p {
     text-align: justify;
-    
+
     font-size: 1.25rem;
     line-height: 1.6;
     margin-bottom: 15px;
-    width: 90%; /* Para que no ocupe todo el ancho */
+    width: 90%;
+    /* Para que no ocupe todo el ancho */
 }
+
 /* Sección Cuarta */
 .cuarta-seccion {
     display: flex;
@@ -297,7 +214,8 @@ body {
 
 /* Columna Derecha (Imagen circular más grande) */
 .cuarta-seccion .right {
-    width: 60%; /* Imagen más grande que el texto */
+    width: 60%;
+    /* Imagen más grande que el texto */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -376,10 +294,13 @@ body {
 /* Contenedor de la imagen rectangular (Ahora es vertical) */
 .rectangle-container {
     position: relative;
-    width: 80%;  /* Más estrecho para ser vertical */
-    height: 90vh;  /* Ocupa casi toda la altura de la sección */
+    width: 80%;
+    /* Más estrecho para ser vertical */
+    height: 90vh;
+    /* Ocupa casi toda la altura de la sección */
     overflow: hidden;
-    border-radius: 20px; /* Bordes redondeados para un mejor diseño */
+    border-radius: 20px;
+    /* Bordes redondeados para un mejor diseño */
 }
 
 /* Imágenes dentro del rectángulo */
@@ -430,7 +351,8 @@ body {
 
 /* Título "Visión" alineado a la derecha */
 .vision-title {
-    font-size: 6rem; /* Más grande */
+    font-size: 6rem;
+    /* Más grande */
     font-weight: 100;
     text-align: right;
     margin-bottom: 20px;
@@ -446,7 +368,8 @@ body {
 
 /* Título "Valores" alineado a la izquierda */
 .valores-title {
-    font-size: 6rem; /* Más grande */
+    font-size: 6rem;
+    /* Más grande */
     font-weight: 100;
     text-align: left;
     margin-bottom: 20px;
@@ -484,7 +407,8 @@ body {
 .underline-img {
     position: relative;
     width: 250px;
-    top: -10px; /* Ajusta la posición */
+    top: -10px;
+    /* Ajusta la posición */
     left: 50%;
     transform: translateX(-50%);
 }
@@ -575,15 +499,16 @@ body {
 .testimonio-card {
     width: 580px;
     height: auto;
-    
-    border: 2px solid #83A187; /* Borde verde grisáceo */
+
+    border: 2px solid #83A187;
+    /* Borde verde grisáceo */
     border-radius: 15px;
     background: transparent;
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
-    
+
     padding: 1em 0;
 }
 
@@ -594,7 +519,7 @@ body {
     line-height: 1.5;
     margin-bottom: 20px;
     padding: 0 1em;
-    
+
 }
 
 /* Contenedor de la imagen y los datos */
@@ -626,10 +551,11 @@ body {
     height: 80%;
     width: 80%;
     right: 0;
-    
+
     text-align: left;
-    background: rgba(127, 136, 140, 0.6); /* Color con opacidad */
-    padding: 0.5em ;
+    background: rgba(127, 136, 140, 0.6);
+    /* Color con opacidad */
+    padding: 0.5em;
     padding-left: 100px;
 
     border-top-left-radius: 20px;

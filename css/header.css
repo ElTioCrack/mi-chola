@@ -1,0 +1,94 @@
+.main-header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 50px;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), transparent);
+    z-index: 1000;
+}
+
+.logo {
+    width: 280px;
+    height: auto;
+}
+
+.main-nav {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.main-nav a {
+    text-decoration: none;
+    color: white;
+    font-weight: 300;
+    letter-spacing: 0.5px;
+    font-size: 1rem;
+    position: relative;
+    padding-bottom: 5px;
+    transition: color 0.3s;
+}
+
+.main-nav a:hover {
+    color: #7e8a22;
+}
+
+.main-nav a::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background-color: #7e8a22;
+    transition: width 0.3s, left 0.3s;
+}
+
+.main-nav a:hover::after {
+    width: 100%;
+    left: 0;
+}
+
+/* Selector de idioma */
+.language-selector {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    color: white;
+    position: relative;
+    padding-bottom: 5px;
+}
+
+.language-selector:hover span {
+    color: #7e8a22;
+}
+
+.language-selector::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background-color: #7e8a22;
+    transition: width 0.3s, left 0.3s;
+}
+
+.language-selector:hover::after {
+    width: 100%;
+    left: 0;
+}
+
+.language-icon {
+    width: 6px;
+    height: auto;
+    transform: rotate(90deg);
+    transition: transform 0.3s;
+}

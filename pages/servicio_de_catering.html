@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Servicio de Catering</title>
+    <title>Mi Chola - Servicio de Catering</title>
+    <link href="./../css/styles.css" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" href="../css/servicio_de_catering.css">
 </head>
 <body>
@@ -104,5 +105,25 @@
              </div>
         </div>
     </div>
+
+    <div id="header-container"></div>
+    <div id="footer-container"></div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        fetch("./header.html")
+          .then((response) => response.text())
+          .then((data) => {
+            document.getElementById("header-container").innerHTML = data;
+          })
+          .catch((error) => console.error("Error cargando el footer:", error));
+        fetch("./footer.html")
+          .then((response) => response.text())
+          .then((data) => {
+            document.getElementById("footer-container").innerHTML = data;
+          })
+          .catch((error) => console.error("Error cargando el footer:", error));
+      });
+    </script>
 </body>
 </html>

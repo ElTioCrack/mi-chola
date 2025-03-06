@@ -1,117 +1,112 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mi Chola Restaurante</title>
-    <link rel="stylesheet" href="./../css/eventos.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mi Chola - Eventos</title>
+    <link href="./../css/styles.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="./../css/eventos.css" />
     <!-- Enlace al archivo CSS -->
-</head>
-<body>
-    <!-- Encabezado principal -->
-    <header>
-        <div class="logo">
-            <h1>Mi Chola</h1>
-            <p>Restaurante</p>
-        </div>
-        <nav>
-            <ul>
-                <li><a href="#inicio">Inicio</a></li>
-                <li><a href="#menu">Menús</a></li>
-                <li><a href="#catering">Servicios de Catering</a></li>
-                <li><a href="#eventos">Eventos</a></li>
-                <li><a href="#nosotros">Nosotros</a></li>
-                <li><a href="#reservas">Reservas</a></li>
-            </ul>
-        </nav>
-    </header>
+  </head>
+  <body>
+
     <section id="tituloeventos" class="titulo-section">
-        <h1 class="eventos">Eventos</h1>
+      <h1 class="eventos">Eventos</h1>
     </section>
     <!-- Sección de Eventos -->
     <section id="eventos" class="eventos-section">
-        <div class="evento-texto">
-            <p class="parrafo">Realizamos diferentes tipos de presentación en la innovación de nuevos menús, con efectos tecno sensoriales., son oportunidades para sumergirse en la cultura culinaria boliviana, probar platos excepcionales y disfrutar de momentos memorables en un ambiente acogedor.</p>
-            <div class="cuadrito"> <!-- Cambiado de <p> a <div> -->
-                <ul>
-                    <li>Menús de degustación</li>
-                    <li>Bofes temáticas</li>
-                    <li>Maridajes</li>
-                    <li>Celebaciones Especiales</li>
-                    <li>Colaboraciones Creativas</li>
-                </ul>
-            </div> <!-- Cierre del div .cuadrito -->
-
+      <div class="evento-texto">
+        <p class="parrafo">
+          Realizamos diferentes tipos de presentación en la innovación de nuevos
+          menús, con efectos tecno sensoriales., son oportunidades para
+          sumergirse en la cultura culinaria boliviana, probar platos
+          excepcionales y disfrutar de momentos memorables en un ambiente
+          acogedor.
+        </p>
+        <div class="cuadrito">
+          <!-- Cambiado de <p> a <div> -->
+          <ul>
+            <li>Menús de degustación</li>
+            <li>Bofes temáticas</li>
+            <li>Maridajes</li>
+            <li>Celebaciones Especiales</li>
+            <li>Colaboraciones Creativas</li>
+          </ul>
         </div>
-        <div class="evento-imagen">
-            <img src="../imgs/tecn-sens.png" alt="Descripción de la imagen">
-        </div>
+        <!-- Cierre del div .cuadrito -->
+      </div>
+      <div class="evento-imagen">
+        <img src="../imgs/tecn-sens.png" alt="Descripción de la imagen" />
+      </div>
     </section>
 
     <section id="reserva" class="titulo-section1">
-        <h1>eventos</h1>
+      <h1>eventos</h1>
     </section>
 
     <!-- Sección de Cotización -->
     <section id="cotizacion" class="form-section">
-        <h1>Cotización</h1>
-        <h2>Cuentanos  en que estas pensando y nosotros hacemos el resto...</h2>
-        <div class="form-container">
-            <form>
-                <div class="form-row">
-                    <div class="form-group">
-                        <label for="nombre">Campo 1 (Nombre):</label>
-                        <input type="text" id="nombre" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="apellido">Campo 2 (Apellido):</label>
-                        <input type="text" id="apellido" required>
-                    </div>
-                </div>
-                <div class="form-row">
-                    <div class="form-group">
-                        <label for="email">Campo 3 (Email):</label>
-                        <input type="email" id="email" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="telefono">Campo 4 (Teléfono):</label>
-                        <input type="tel" id="telefono" required>
-                    </div>
-                </div>
-                
-                <div class="form-group">
-                    <label for="servicio">ComboBox (Selecciona un servicio):</label>
-                    <select id="servicio" required>
-                        <option value="" disabled selected>Seleccione un servicio</option>
-                        <option value="eventos">Eventos</option>
-                        <option value="catering">Servicios de Catering</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label for="comentarios">Text Area (Cuéntanos):</label>
-                    <textarea id="comentarios" rows="4" required></textarea>
-                </div>
-                <button type="submit">COTIZAR</button>
-            </form>
-        </div>
+      <h1>Cotización</h1>
+      <h2>Cuentanos en que estas pensando y nosotros hacemos el resto...</h2>
+      <div class="form-container">
+        <form>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="nombre">Campo 1 (Nombre):</label>
+              <input type="text" id="nombre" required />
+            </div>
+            <div class="form-group">
+              <label for="apellido">Campo 2 (Apellido):</label>
+              <input type="text" id="apellido" required />
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="email">Campo 3 (Email):</label>
+              <input type="email" id="email" required />
+            </div>
+            <div class="form-group">
+              <label for="telefono">Campo 4 (Teléfono):</label>
+              <input type="tel" id="telefono" required />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="servicio">ComboBox (Selecciona un servicio):</label>
+            <select id="servicio" required>
+              <option value="" disabled selected>Seleccione un servicio</option>
+              <option value="eventos">Eventos</option>
+              <option value="catering">Servicios de Catering</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="comentarios">Text Area (Cuéntanos):</label>
+            <textarea id="comentarios" rows="4" required></textarea>
+          </div>
+          <button type="submit">COTIZAR</button>
+        </form>
+      </div>
     </section>
 
+    <div id="header-container"></div>
+    <div id="footer-container"></div>
 
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        fetch("./header.html")
+          .then((response) => response.text())
+          .then((data) => {
+            document.getElementById("header-container").innerHTML = data;
+          })
+          .catch((error) => console.error("Error cargando el footer:", error));
+        fetch("./footer.html")
+          .then((response) => response.text())
+          .then((data) => {
+            document.getElementById("footer-container").innerHTML = data;
+          })
+          .catch((error) => console.error("Error cargando el footer:", error));
+      });
+    </script>
 
-    <!-- Pie de página -->
-    <footer>
-        <div class="footer-info">
-            <p>20 de octubre Esquina Pasaje Medicinal, 2218 La Paz - Bolivia</p>
-            <p>Email: <a href="mailto:anger19@gmail.com">anger19@gmail.com</a></p>
-            <p>Teléfono: +591 777728263</p>
-            <p>Horarios: Lun - Sab 12:00 a 22:00 p.m. | Domingo: Cerrado | Feriados con reservas</p>
-        </div>
-        <div class="social-media">
-            <a href="#">Facebook</a>
-            <a href="#">Instagram</a>
-            <a href="#">TikTok</a>
-        </div>
-        <p>&copy; 2025 Mi Chola Restaurante - Todos los derechos reservados</p>
-    </footer>
-</body>
+  </body>
 </html>

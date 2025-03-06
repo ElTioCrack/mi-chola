@@ -1,1594 +1,669 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>MICHOLA Restaurante</title>
-    <style>
-        * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Arial', sans-serif;
-}
-
-body {
-    background-color: #111;
-    color: white;
-}
-
-header {
-    padding: 15px 20px;
-    background-color: #000;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-bottom: 1px solid #333;
-}
-
-.logo {
-    width: 200px;
-    height: auto;
-    overflow: hidden;
-    margin-left: 40px;
-}
-
-.logo img {
-    width: 100%;
-    height: auto;
-}
-
-nav ul {
-    display: flex;
-    list-style: none;
-}
-
-nav ul li {
-    margin-left: 20px;
-}
-
-nav ul li a {
-    color: white;
-    text-decoration: none;
-    font-size: 14px;
-    text-transform: uppercase;
-}
-
-.main-content {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
-}
-
-.hero {
-    text-align: left;
-    position: relative;
-    margin-bottom: 50px;
-}
-
-.hero h1 {
-    font-size: 48px;
-    letter-spacing: 2px;
-    margin-bottom: 20px;
-    text-align: left;
-}
-
-.hero-image {
-    position: relative;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    margin: 20px 0;
-}
-
-.hero-image .main-plate {
-    width: 350px;
-    height: 350px;
-    border-radius: 50%;
-    object-fit: cover;
-}
-
-.side-plates {
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-}
-
-.side-plates img {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    object-fit: cover;
-}
-
-.hero-description {
-    max-width: 400px;
-    margin-left: 0;
-    text-align: left;
-    font-size: 14px;
-    line-height: 1.6;
-}
-
-.navigation-arrows {
-    position: absolute;
-    width: 100%;
-    top: 50%;
-    transform: translateY(-50%);
-    display: flex;
-    justify-content: space-between;
-    padding: 0 10px;
-}
-
-.arrow {
-    font-size: 24px;
-    cursor: pointer;
-    background: none;
-    border: none;
-    color: white;
-}
-
-.menu-section {
-    margin-top: 30px;
-    padding-bottom: 30px;
-}
-
-.menu-section h2 {
-    font-size: 32px;
-    text-align: center;
-    margin-bottom: 30px;
-    position: relative;
-}
-
-.menu-section h2:after {
-    content: '';
-    position: absolute;
-    bottom: -10px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 80px;
-    height: 2px;
-    background-color: #8B7D39;
-}
-
-.menu-option {
-    background-color: rgba(0, 0, 0, 0.5);
-    border: 1px solid #8B7D39;
-    border-radius: 5px;
-    padding: 20px;
-    margin-bottom: 30px;
-}
-
-.menu-option h3 {
-    text-align: center;
-    margin-bottom: 20px;
-    font-size: 20px;
-}
-
-.menu-details {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 20px;
-}
-
-.menu-item {
-    text-align: center;
-    flex: 1;
-}
-
-.menu-item-title {
-    font-weight: bold;
-    margin-bottom: 10px;
-}
-
-.menu-item-description {
-    font-size: 14px;
-    color: #ddd;
-}
-
-.price-reserve {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: 30px;
-}
-
-.price {
-    background-color: rgba(0, 0, 0, 0.5);
-    border: 1px solid #8B7D39;
-    padding: 10px 20px;
-    border-radius: 5px;
-}
-
-.reserve-btn {
-    background-color: #8B7D39;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-.plate-structure {
-    background-color: #111;
-    padding: 20px 0;
-    margin-top: 30px;
-}
-
-.plate-structure h2 {
-    padding: 15px;
-    background-color: #eee;
-    color: #000;
-    margin-bottom: 20px;
-    text-align: center;
-}
-
-.plate-details {
-    position: relative;
-    padding: 20px;
-}
-
-.plate-item {
-    display: block;
-    margin-bottom: 40px;
-    position: relative;
-}
-
-.plate-item-title {
-    margin-bottom: 10px;
-    font-size: 18px;
-}
-
-.plate-image {
-    width: 250px;
-    height: 250px;
-    border-radius: 10px;
-    object-fit: cover;
-}
-
-.plate-arrow {
-    position: absolute;
-    width: 50px;
-    height: 2px;
-    background-color: #666;
-}
-
-.arrow-label {
-    position: absolute;
-    font-size: 14px;
-}
-
-.ingredients {
-    background-color: #111;
-    padding: 20px 0;
-    margin-top: 30px;
-}
-
-.ingredients h2 {
-    padding: 15px;
-    background-color: #eee;
-    color: #000;
-    margin-bottom: 20px;
-    text-align: center;
-}
-
-.ingredients-grid {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
-    padding: 20px;
-}
-
-.ingredient-card {
-    border: 1px solid #8B7D39;
-    border-radius: 5px;
-    padding: 15px;
-    width: 250px;
-}
-
-.ingredient-image {
-    width: 100%;
-    height: 150px;
-    object-fit: cover;
-    margin-bottom: 10px;
-}
-
-.ingredient-name {
-    font-weight: bold;
-    margin-bottom: 5px;
-}
-
-.ingredient-description {
-    font-size: 12px;
-    color: #ddd;
-}
-
-.wine-pairing {
-    padding: 20px;
-    margin-top: 30px;
-}
-
-.wine-pairing h3 {
-    position: relative;
-    margin-bottom: 40px;
-    font-size: 24px;
-}
-
-.wine-pairing h3:after {
-    content: '';
-    position: absolute;
-    bottom: -10px;
-    left: 0;
-    width: 60px;
-    height: 2px;
-    background-color: #8B7D39;
-}
-
-.wine-grid {
-    display: flex;
-    justify-content: space-between;
-    gap: 20px;
-}
-
-.wine-card {
-    text-align: center;
-    position: relative;
-}
-
-.wine-image {
-    width: 80px;
-    height: 200px;
-    object-fit: cover;
-    margin-bottom: 10px;
-    display: block;
-    margin: 0 auto;
-}
-
-.wine-info {
-    position: relative;
-    z-index: 2;
-}
-
-.wine-circle {
-    position: absolute;
-    width: 180px;
-    height: 180px;
-    background-color: #8B7D39;
-    border-radius: 50%;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 1;
-}
-
-.wine-type {
-    font-weight: bold;
-    margin-bottom: 5px;
-    position: relative;
-    z-index: 2;
-    color: white;
-}
-
-.wine-description {
-    font-size: 12px;
-    color: white;
-    position: relative;
-    z-index: 2;
-}
-
-.wine-price {
-    margin-top: 10px;
-    font-weight: bold;
-    position: relative;
-    z-index: 2;
-}
-
-footer {
-    background-color: black;
-    color: white;
-    padding: 20px 0;
-    text-align: center;
-    font-family: Arial, sans-serif;
-}
-
-.footer-container {
-    display: flex;
-    justify-content: space-around;
-    align-items: flex-start;
-    flex-wrap: wrap;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.contact-info, .hours, .social-icons {
-    flex: 1;
-    text-align: left;
-    min-width: 200px;
-    margin: 10px;
-}
-
-.contact-info .info-item {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    margin-bottom: 15px;
-}
-
-.footer-logo {
-    text-align: center;
-    margin: 20px 0;
-}
-
-.footer-logo img {
-    width: 550px;
-    height: auto;
-}
-
-.hours strong {
-    font-size: 16px;
-    font-weight: bold;
-    display: block;
-    margin-bottom: 10px;
-}
-
-.hours p {
-    margin-bottom: 8px;
-}
-
-.social-icons {
-    display: flex;
-    gap: 15px;
-    justify-content: center;
-    margin-top: 15px;
-}
-
-.social-icon {
-    width: 30px;
-    height: 30px;
-    display: inline-block;
-    transition: transform 0.3s ease;
-    font-size: 24px;
-    color: white;
-    text-decoration: none;
-}
-
-.social-icon:hover {
-    transform: scale(1.1);
-}
-
-.footer-bottom {
-    text-align: center;
-    font-size: 12px;
-    margin-top: 20px;
-    padding-top: 15px;
-    border-top: 1px solid #333;
-    max-width: 80%;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.allergen-info {
-    font-size: 12px;
-    text-align: center;
-    padding: 20px;
-    color: #aaa;
-}
-
-.contact-info img {
-    width: 20px;
-    height: auto;
-}
-
-.main-plate {
-    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
-}
-
-.side-plates img {
-    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
-    cursor: pointer;
-}
-
-.side-plates img.hover-effect {
-    transform: scale(1.1);
-    opacity: 0.9;
-}
-
-.fade-out {
-    opacity: 0;
-    transform: scale(0.95);
-}
-
-.fade-in {
-    animation: fadeIn 0.5s ease-in-out;
-}
-
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: scale(0.95);
-    }
-    to {
-        opacity: 1;
-        transform: scale(1);
-    }
-}
-
-.arrow {
-    background: rgba(0, 0, 0, 0.5);
-    color: white;
-    border: none;
-    border-radius: 50%;
-    width: 40px;
-    height: 40px;
-    font-size: 20px;
-    cursor: pointer;
-    transition: background 0.3s ease;
-}
-
-.arrow:hover {
-    background: rgba(0, 0, 0, 0.8);
-}
-
-.side-plates img {
-    opacity: 0.7;
-}
-
-h2 {
-            text-align: center;
-            margin-bottom: 30px;
-            font-size: 28px;
-            color: #333;
-            position: relative;
-        }
-        
-        h2:after {
-            content: '';
-            position: absolute;
-            bottom: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 300px;
-            height: 2px;
-            background-color: #333;
-        }
-        
-        .carousel-container {
-            position: relative;
-            max-width: 100%;
-            overflow: hidden;
-        }
-        
-        .carousel {
-            display: flex;
-            transition: transform 0.5s ease;
-        }
-        
-        .ingredient-card {
-            min-width: 280px;
-            margin: 0 10px;
-            padding: 15px;
-            background-color: white;
-            border-radius: 15px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            transition: all 0.3s ease;
-            border: 2px solid #e0e0a0;
-            flex: 0 0 calc(25% - 20px);
-        }
-        
-        .ingredient-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
-        }
-        
-        .ingredient-image {
-            width: 100%;
-            height: 180px;
-            object-fit: cover;
-            border-radius: 10px;
-            margin-bottom: 15px;
-        }
-        
-        .ingredient-name {
-            font-weight: bold;
-            text-align: center;
-            margin-bottom: 10px;
-            color: #555;
-            font-size: 18px;
-        }
-        
-        .ingredient-description {
-            font-size: 14px;
-            color: #666;
-            line-height: 1.5;
-            text-align: center;
-        }
-        
-        .nav-btn {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            background-color: rgba(255, 255, 255, 0.7);
-            border: none;
-            border-radius: 50%;
-            width: 50px;
-            height: 50px;
-            font-size: 24px;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-            z-index: 10;
-            transition: all 0.3s ease;
-        }
-        
-        .nav-btn:hover {
-            background-color: rgba(255, 255, 255, 0.9);
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-        }
-        
-        .prev-btn {
-            left: 10px;
-        }
-        
-        .next-btn {
-            right: 10px;
-        }
-        
-        @media (max-width: 1200px) {
-            .ingredient-card {
-                flex: 0 0 calc(33.333% - 20px);
-            }
-        }
-        
-        @media (max-width: 992px) {
-            .ingredient-card {
-                flex: 0 0 calc(50% - 20px);
-            }
-        }
-        
-        @media (max-width: 576px) {
-            .ingredient-card {
-                flex: 0 0 calc(100% - 20px);
-            }
-        }
-
-        h2:after {
-            content: '';
-            position: absolute;
-            bottom: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 300px;
-            height: 2px;
-            background-color: #333;
-        }
-        
-        .carousel-wrapper {
-            position: relative;
-            width: 100%;
-            padding: 0 50px;
-            margin: 40px 0;
-        }
-        
-        .carousel-container {
-            width: 100%;
-            overflow: hidden;
-        }
-        
-        .carousel {
-            display: flex;
-            transition: transform 0.5s ease;
-            width: 100%;
-        }
-        
-        .wine-card {
-            position: relative;
-            flex: 0 0 20%;
-            padding: 0 10px;
-            text-align: center;
-            min-width: 220px;
-        }
-        
-        .wine-circle {
-            position: absolute;
-            width: 180px;
-            height: 180px;
-            background-color: rgba(192, 186, 77, 0.7);
-            border-radius: 50%;
-            top: 50px;
-            left: 50%;
-            transform: translateX(-50%);
-            z-index: 1;
-        }
-        
-        .wine-image {
-            position: relative;
-            height: 240px;
-            margin: 0 auto;
-            display: block;
-            z-index: 2;
-        }
-        
-        .wine-info {
-            margin-top: 15px;
-            padding: 10px;
-        }
-        
-        .wine-type {
-            font-weight: bold;
-            margin-bottom: 8px;
-            color: #333;
-            font-size: 14px;
-            line-height: 1.3;
-            height: 40px;
-        }
-        
-        .wine-description {
-            font-size: 12px;
-            color: #666;
-            margin-bottom: 8px;
-            line-height: 1.4;
-        }
-        
-        .wine-price {
-            font-weight: bold;
-            color: #333;
-            font-size: 16px;
-            margin-top: 10px;
-        }
-        
-        .nav-btn {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            background-color: rgba(0, 0, 0, 0.5);
-            color: white;
-            border: none;
-            border-radius: 50%;
-            width: 40px;
-            height: 40px;
-            font-size: 20px;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            z-index: 10;
-            transition: background-color 0.3s;
-        }
-        
-        .nav-btn:hover {
-            background-color: rgba(0, 0, 0, 0.8);
-        }
-        
-        .prev-btn {
-            left: 10px;
-        }
-        
-        .next-btn {
-            right: 10px;
-        }
-        
-        @media (max-width: 1200px) {
-            .wine-card {
-                flex: 0 0 25%;
-            }
-        }
-        
-        @media (max-width: 992px) {
-            .wine-card {
-                flex: 0 0 33.333%;
-            }
-        }
-        
-        @media (max-width: 768px) {
-            .wine-card {
-                flex: 0 0 50%;
-            }
-        }
-        
-        @media (max-width: 576px) {
-            .wine-card {
-                flex: 0 0 100%;
-            }
-            .carousel-wrapper {
-                padding: 0 30px;
-            }
-        }
-       
-.plate-structure {
-    background-color: #111;
-    color: white;
-    padding: 40px 20px;
-    position: relative;
-    margin-top: 30px;
-}
-.Native-seccion {
-    background-color: #f7f2ed;
-    color: white;
-    padding: 40px 20px;
-    position: relative;
-    margin-top: 30px;
-    margin-bottom: 0; /* Elimina cualquier margen inferior */
-    width: 100vw; /* Ocupa todo el ancho de la ventana */
-    left: 50%; /* Mueve la sección para que ocupe todo el ancho */
-    right: 50%; /* Similar a la propiedad left */
-    transform: translateX(-50%); /* Centra la sección */
-    box-sizing: border-box; /* Asegura que el padding no afecte el tamaño total */
-    height: auto; /* Se ajusta al contenido */
-}
-
-.plate-structure h2 {
-    text-align: center;
-    font-size: 28px;
-    margin-bottom: 40px;
-    position: relative;
-    color: #fff;
-}
-
-.plate-structure h2:after {
-    content: '';
-    position: absolute;
-    bottom: -10px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 220px;
-    height: 2px;
-    background-color: #5a9367;
-}
-
-.plate-details {
-    position: relative;
-    padding: 20px;
-}
-
-.plate-item-title {
-    margin-bottom: 20px;
-    font-size: 18px;
-}
-
-.right-aligned {
-    text-align: right;
-    margin-top: 20px;
-}
-
-.plate-image-wrapper {
-    position: relative;
-    display: inline-block;
-    margin-bottom: 60px;
-}
-
-.plate-image {
-    max-width: 100%;
-    height: auto;
-    width: 250px;
-    height: 250px;
-    object-fit: cover;
-    border-radius: 10px;
-}
-
-.plate-item-huariata {
-    position: relative;
-    margin-top: 80px;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-}
-
-/* Arrows and descriptions */
-.dish-arrow {
-    display: flex;
-    align-items: center;
-    position: absolute;
-}
-
-.right-arrow {
-    top: 40%;
-    left: 260px;
-}
-
-.bottom-arrow {
-    top: 280px;
-    left: 50px;
-}
-
-.left-arrow {
-    top: 40%;
-    right: 260px;
-}
-
-.bottom-right-arrow {
-    top: 280px;
-    right: 80px;
-}
-
-.arrow-oval {
-    width: 80px;
-    height: 40px;
-    background-color: #111;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-}
-
-.arrow-line {
-    width: 60%;
-    height: 2px;
-    background-color: #fff;
-    position: relative;
-}
-
-.arrow-line::after {
-    content: '';
-    position: absolute;
-    right: 0;
-    top: -4px;
-    width: 10px;
-    height: 10px;
-    border-top: 2px solid #fff;
-    border-right: 2px solid #fff;
-    transform: rotate(45deg);
-}
-
-.left-line::after {
-    left: 0;
-    right: auto;
-    transform: rotate(-135deg);
-}
-
-.diagonal {
-    transform: rotate(45deg);
-}
-
-.diagonal::after {
-    transform: rotate(45deg);
-}
-
-.diagonal-right {
-    transform: rotate(-45deg);
-}
-
-.diagonal-right::after {
-    transform: rotate(45deg);
-}
-
-.dish-description {
-    margin-left: 20px;
-    max-width: 300px;
-}
-
-.text-right {
-    margin-right: 20px;
-    margin-left: 0;
-    text-align: right;
-}
-
-.dish-label {
-    font-weight: bold;
-    margin-bottom: 5px;
-}
-
-.dish-text {
-    font-size: 12px;
-}
-
-/* Responsive styles */
-@media (max-width: 768px) {
-    .plate-item-huariata {
-        align-items: center;
-    }
-    
-    .right-aligned {
-        text-align: center;
-    }
-    
-    .dish-arrow {
-        position: relative;
-        margin: 20px auto;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        top: auto;
-        left: auto;
-        right: auto;
-    }
-    
-    .text-right {
-        text-align: center;
-        margin: 0 0 20px 0;
-    }
-    
-    .bottom-arrow,
-    .bottom-right-arrow {
-        margin-top: 30px;
-    }
-    
-    .plate-image-wrapper {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-}
-.ingredients {
-    background-color: #f4f4f4;
-    padding: 20px 0;
-    margin-top: 30px;
-}
-.wine-pairing {
-    background-color: #f4f4f4; 
-    padding: 20px;
-    margin-top: 30px;
-}
-    </style>
-</head>
-<body>
-    <header>
-        <div class="logo">
-            <img src="../imgs/MARCA/mi chola-marca.png" alt="MICHOLA">
-          </div> 
-        <nav>
-            <ul>
-                <li><a href="#">Inicio</a></li>
-                <li><a href="#">Menús</a></li>
-                <li><a href="#">Espacios de Cocina</a></li>
-                <li><a href="#">Equipo</a></li>
-                <li><a href="#">Experiencias Art</a></li>
-                <li><a href="#">Politicas</a></li>
-                <li><a href="#">Reservas</a></li>
-            </ul>
-        </nav>
-    </header>
-
+    <link href="./../css/styles.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="./../css/menus.css" />
+  </head>
+  <body>
     <div class="main-content">
-        <!-- Hero Section -->
-        <section class="hero">
-            <h1>MENÚS</h1>
-            <div class="hero-image">
-                <img src="../imgs/Sin_título-2.png" alt="Plato principal" class="main-plate">
-                <div class="side-plates">
-                    <img src="/api/placeholder/100/100" alt="Plato lateral izquierdo">
-                    <img src="/api/placeholder/100/100" alt="Plato lateral derecho">
-                </div>
-                <div class="navigation-arrows">
-                    <button class="arrow">&#10094;</button>
-                    <button class="arrow">&#10095;</button>
-                </div>
-            </div>
-            <div class="hero-description">
-                <p>Cada plato es elaborado con diferentes tipos de ingredientes de sectores de Bolivia<br>Hay Menus de 4, 5 a 6 tiempos Desde entrada, platos fuertes y postres, con exquisitos sabores</p>
-            </div>
-        </section>
-        
-      
-        <script>
-           const plates = [
-    {
-        image: '../imgs/Sin_título-2.png',
-        description: 'Entrada de quinoa con verduras andinas y aderezo de hierbas aromáticas de la región'
-    },
-    {
-        image: '../imgs/Sin título-3 (1).png',
-        description: 'Trucha del Titicaca con salsa de ají amarillo y guarnición de tubérculos nativos'
-    },
-    {
-        image: '../imgs/Sin título-20 (1).png',
-        description: 'Postre de api morado con especias y frutas del valle cochabambino'
-    },
-    {
-        image: '../imgs/Sin título-25 (1).png',
-        description: 'Chupe de camarones del lago con toque de huacatay y limón'
-    },
-    {
-        image: '../imgs/Sin título-28 (1).png',
-        description: 'Plato fuerte de lomo saltado con papa imilla y chuño'
-    }
-   
-];
-
-let currentIndex = 0;
-
-// Obtener elementos del DOM
-const mainPlateImg = document.querySelector('.main-plate');
-const leftPlateImg = document.querySelector('.side-plates img:first-child');
-const rightPlateImg = document.querySelector('.side-plates img:last-child');
-const leftArrow = document.querySelector('.arrow:first-child');
-const rightArrow = document.querySelector('.arrow:last-child');
-const descriptionText = document.querySelector('.hero-description p');
-
-// Función para actualizar el plato principal
-function updateMainPlate() {
-    const currentPlate = plates[currentIndex];
-    
-    // Añadir clase para animación de salida
-    mainPlateImg.classList.add('fade-out');
-    
-    // Después de la animación de salida, actualizar imagen y hacer animación de entrada
-    setTimeout(() => {
-        mainPlateImg.src = currentPlate.image;
-        descriptionText.innerHTML = currentPlate.description;
-        
-        // Eliminar clase de salida y añadir clase de entrada
-        mainPlateImg.classList.remove('fade-out');
-        mainPlateImg.classList.add('fade-in');
-        
-        // Eliminar clase de entrada después de que termine la animación
-        setTimeout(() => {
-            mainPlateImg.classList.remove('fade-in');
-        }, 500);
-    }, 300);
-    
-    // Actualizar los platos laterales para mostrar los platos anterior y siguiente
-    updateSidePlates();
-}
-
-// Función para actualizar los platos laterales
-function updateSidePlates() {
-    // Índice del plato anterior (con wraparound)
-    const prevIndex = (currentIndex - 1 + plates.length) % plates.length;
-    // Índice del plato siguiente (con wraparound)
-    const nextIndex = (currentIndex + 1) % plates.length;
-    
-    // Actualizar imágenes de los platos laterales
-    leftPlateImg.src = plates[prevIndex].image;
-    rightPlateImg.src = plates[nextIndex].image;
-}
-
-// Listener para la flecha izquierda
-leftArrow.addEventListener('click', () => {
-    currentIndex = (currentIndex - 1 + plates.length) % plates.length;
-    updateMainPlate();
-});
-
-// Listener para la flecha derecha
-rightArrow.addEventListener('click', () => {
-    currentIndex = (currentIndex + 1) % plates.length;
-    updateMainPlate();
-});
-
-// También permitir que se haga clic en los platos laterales para navegar
-leftPlateImg.addEventListener('click', () => {
-    currentIndex = (currentIndex - 1 + plates.length) % plates.length;
-    updateMainPlate();
-});
-
-rightPlateImg.addEventListener('click', () => {
-    currentIndex = (currentIndex + 1) % plates.length;
-    updateMainPlate();
-});
-
-// Inicializar la visualización
-document.addEventListener('DOMContentLoaded', () => {
-    updateMainPlate();
-    
-    // Agregar eventos de hover para los platos laterales
-    leftPlateImg.addEventListener('mouseenter', () => {
-        leftPlateImg.classList.add('hover-effect');
-    });
-    
-    leftPlateImg.addEventListener('mouseleave', () => {
-        leftPlateImg.classList.remove('hover-effect');
-    });
-    
-    rightPlateImg.addEventListener('mouseenter', () => {
-        rightPlateImg.classList.add('hover-effect');
-    });
-    
-    rightPlateImg.addEventListener('mouseleave', () => {
-        rightPlateImg.classList.remove('hover-effect');
-    });
-});
-        </script>
-
-        <!-- Menu Tasting Options Section -->
-        <section class="menu-section">
-            <h2>MENÚS DE TIEMPOS</h2>
-
-            <!-- 4 Times Menu -->
-            <div class="menu-option">
-                <h3>Degustación de 4 tiempos</h3>
-                <div class="menu-details">
-                    <div class="menu-item">
-                        <div class="menu-item-title">1 ENTRADA</div>
-                        <div class="menu-item-description">Bollero de tunta</div>
-                    </div>
-                    <div class="menu-item">
-                        <div class="menu-item-title">2 PLATOS FUERTES</div>
-                        <div class="menu-item-description">Gratin de pashe relleno de tuna carnosa de nopal, reducción de vinagre de chichi y chirimé</div>
-                    </div>
-                    <div class="menu-item">
-                        <div class="menu-item-title">1 POSTRE</div>
-                        <div class="menu-item-description">Mousse de mandarina, salpicón de ratafia de frutos de canela de trólesis y limoncillo</div>
-                    </div>
-                </div>
-                <div class="price-reserve">
-                    <div class="price">120 bs.</div>
-                    <button class="reserve-btn">Reservar</button>
-                </div>
-            </div>
-
-            <!-- 5 Times Menu -->
-            <div class="menu-option">
-                <h3>Degustación de 5 tiempos</h3>
-                <div class="menu-details">
-                    <div class="menu-item">
-                        <div class="menu-item-title">2 ENTRADA</div>
-                        <div class="menu-item-description">Juzu Ushu<br>Ají de pataska</div>
-                    </div>
-                    <div class="menu-item">
-                        <div class="menu-item-title">2 PLATOS FUERTES</div>
-                        <div class="menu-item-description">Charque Vallicantano<br>Chiriuchu de Llama</div>
-                    </div>
-                    <div class="menu-item">
-                        <div class="menu-item-title">1 POSTRE</div>
-                        <div class="menu-item-description">Espuma<br>Caramelizada</div>
-                    </div>
-                </div>
-                <div class="price-reserve">
-                    <div class="price">150 bs.</div>
-                    <button class="reserve-btn">Reservar</button>
-                </div>
-            </div>
-
-            <!-- 6 Times Menu -->
-            <div class="menu-option">
-                <h3>Degustación de 6 tiempos</h3>
-                <div class="menu-details">
-                    <div class="menu-item">
-                        <div class="menu-item-title">2 ENTRADA</div>
-                        <div class="menu-item-description">LLajpachi<br>Achojcha relleno</div>
-                    </div>
-                    <div class="menu-item">
-                        <div class="menu-item-title">2 PLATOS FUERTES</div>
-                        <div class="menu-item-description">Kiwi<br>Ají de Cochayuyo</div>
-                    </div>
-                    <div class="menu-item">
-                        <div class="menu-item-title">2 POSTRE</div>
-                        <div class="menu-item-description">Locoto relleno<br>Tortillas</div>
-                    </div>
-                </div>
-                <div class="price-reserve">
-                    <div class="price">165 bs.</div>
-                    <button class="reserve-btn">Reservar</button>
-                </div>
-            </div>
-
-            <div class="allergen-info">
-                <p>Para opciones veganas, libres de gluten u otras alergias/intolerancias, por favor contactarse con el restaurante con al menos 24 horas de anticipación.</p>
-            </div>
-        </section>
-
-        
-        <section class="plate-structure">
-            <h2>Estructura de Platos</h2>
-            
-            <!-- First plate item - Tunta -->
-            <div class="plate-details">
-                <div class="plate-item-title">Tunta rellena de filete de alpaca</div>
-                <div class="plate-image-wrapper">
-                    <img src="../imgs/estruc-plat1.png" alt="Tunta rellena" class="plate-image">
-                    
-                    <!-- Ilusión arrow -->
-                    <div class="dish-arrow right-arrow">
-                        <div class="arrow-oval">
-                            <div class="arrow-line"></div>
-                        </div>
-                        <div class="dish-description">
-                            <div class="dish-label">Ilusión</div>
-                            <div class="dish-text">Son virutas de insumos criados antes de servir y mejorar la presentación y sabor.</div>
-                        </div>
-                    </div>
-                    
-                    <!-- Tunta arrow -->
-                    <div class="dish-arrow bottom-arrow">
-                        <div class="arrow-oval">
-                            <div class="arrow-line diagonal"></div>
-                        </div>
-                        <div class="dish-description">
-                            <div class="dish-label">Tunta</div>
-                            <div class="dish-text">Producto deshidratado que se obtiene de la variedad de la papa</div>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Second plate item - Huariata -->
-                <div class="plate-item-huariata">
-                    <!-- Huariata arrow -->
-                    <div class="dish-arrow left-arrow">
-                        <div class="dish-description text-right">
-                            <div class="dish-label">Huariata</div>
-                            <div class="dish-text">Producto deshidratado que se obtiene de los tubérculos de la papa</div>
-                        </div>
-                        <div class="arrow-oval">
-                            <div class="arrow-line left-line"></div>
-                        </div>
-                    </div>
-                    
-                    <div class="plate-image-wrapper">
-                        <img src="../imgs/estruc-menu2.png" alt="Huariata" class="plate-image">
-                    </div>
-                    
-                    <div class="plate-item-title right-aligned">Huariata plato a base de la cabeza de cerdo y ají</div>
-                    
-                    <!-- Relleno de phasa arrow -->
-                    <div class="dish-arrow bottom-right-arrow">
-                        <div class="dish-description text-right">
-                            <div class="dish-label">Relleno de phasa</div>
-                            <div class="dish-text">Producto deshidratado que se obtiene de los tubérculos de la papa</div>
-                        </div>
-                        <div class="arrow-oval">
-                            <div class="arrow-line diagonal-right"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        
-        <div class="Native-seccion">
-            <h2>Ingredientes Nativos de Bolivia</h2>
-            
-            <div class="carousel-container">
-                <button class="nav-btn prev-btn">&#10094;</button>
-                
-                <div class="carousel">
-                    <div class="ingredient-card">
-                        <img src="../imgs/ingred-2.png" alt="Phasa arcilla" class="ingredient-image">
-                        <div class="ingredient-name">Phasa (arcilla comestible)</div>
-                        <div class="ingredient-description">La Phasa es una arcilla que se encuentra en diferentes partes de Bolivia. Se consume como alimento o con fines medicinales tradicionales.</div>
-                    </div>
-                    
-                    <div class="ingredient-card">
-                        <img src="../imgs/ingred-nat2.png" alt="Semillas" class="ingredient-image">
-                        <div class="ingredient-name">Semillas</div>
-                        <div class="ingredient-description">La diversidad biológica tiene granos y semillas llenas de valor y nutrientes andinos. Alto porcentaje de proteínas, baja integración grasa de omega, calcio, hierro, potasio y zinc.</div>
-                    </div>
-                    
-                    <div class="ingredient-card">
-                        <img src="../imgs/quinus (1).png" alt="Cañahua en grano" class="ingredient-image">
-                        <div class="ingredient-name">Cañahua en grano</div>
-                        <div class="ingredient-description">Alimento cultivado, alto valor nutricional, proteína y aminoácidos, perfecto cereal orgánico como quinua en la alimentación.</div>
-                    </div>
-                    
-                    <div class="ingredient-card">
-                        <img src="../imgs/tuyus (1).png" alt="Ajipa" class="ingredient-image">
-                        <div class="ingredient-name">Ajipa</div>
-                        <div class="ingredient-description">Tubérculo andino tradicionalmente consumido crudo por su dulce sabor refrescante. Rico en proteínas, vitaminas y minerales esenciales.</div>
-                    </div>
-                </div>
-                
-                <button class="nav-btn next-btn">&#10095;</button>
-            </div>
+      <!-- Hero Section -->
+      <section class="hero">
+        <h1>MENÚS</h1>
+        <div class="hero-image">
+          <img
+            src="../imgs/Sin_título-2.png"
+            alt="Plato principal"
+            class="main-plate"
+          />
+          <div class="side-plates">
+            <img src="/api/placeholder/100/100" alt="Plato lateral izquierdo" />
+            <img src="/api/placeholder/100/100" alt="Plato lateral derecho" />
+          </div>
+          <div class="navigation-arrows">
+            <button class="arrow">&#10094;</button>
+            <button class="arrow">&#10095;</button>
+          </div>
         </div>
-    
-        <script>
-            document.addEventListener('DOMContentLoaded', function() {
-                const carousel = document.querySelector('.carousel');
-                const prevBtn = document.querySelector('.prev-btn');
-                const nextBtn = document.querySelector('.next-btn');
-                const cards = document.querySelectorAll('.ingredient-card');
-                
-                let currentIndex = 0;
-                let cardWidth = cards[0].offsetWidth + 20; // card width + margin
-                let cardsToShow = calculateCardsToShow();
-                
-                // Calculate visible cards based on screen width
-                function calculateCardsToShow() {
-                    if (window.innerWidth > 1200) return 4;
-                    if (window.innerWidth > 992) return 3;
-                    if (window.innerWidth > 576) return 2;
-                    return 1;
-                }
-                
-                // Update card width on window resize
-                window.addEventListener('resize', function() {
-                    cardWidth = cards[0].offsetWidth + 20;
-                    cardsToShow = calculateCardsToShow();
-                    updateCarousel();
-                });
-                
-                function updateCarousel() {
-                    carousel.style.transform = `translateX(-${currentIndex * cardWidth}px)`;
-                }
-                
-                prevBtn.addEventListener('click', function() {
-                    if (currentIndex > 0) {
-                        currentIndex--;
-                        updateCarousel();
-                    }
-                });
-                
-                nextBtn.addEventListener('click', function() {
-                    if (currentIndex < cards.length - cardsToShow) {
-                        currentIndex++;
-                        updateCarousel();
-                    }
-                });
-            });
-        </script>
-
-<div class="Native-seccion">
-    <h2>Vinos de Bolivia</h2>
-    
-    <div class="carousel-wrapper">
-        <button class="nav-btn prev-btn" onclick="moveCarousel(-1)">&#10094;</button>
-        
-        <div class="carousel-container">
-            <div class="carousel" id="wineCarousel">
-                <!-- Vino 1 -->
-                <div class="wine-card">
-                    <div class="wine-circle"></div>
-                    <img src="../imgs/vino2.png" alt="Vino blanco" class="wine-image">
-                    <div class="wine-info">
-                        <div class="wine-type">Vino blanco</div>
-                        <div class="wine-description">Sabor lírico<br>Cepa: Sauvignon Blanco<br>Semidulce - Santa Cruz</div>
-                        <div class="wine-price">1750</div>
-                    </div>
-                </div>
-                
-                <!-- Vino 2 -->
-                <div class="wine-card">
-                    <div class="wine-circle"></div>
-                    <img src="../imgs/vino3.png" alt="Vino tinto" class="wine-image">
-                    <div class="wine-info">
-                        <div class="wine-type">Sabor a frutos rojos y negros maduros</div>
-                        <div class="wine-description">Cepa: Malbec (Reserva)<br>Seco - Tarija Bolivia</div>
-                        <div class="wine-price">Cañon Escondido</div>
-                    </div>
-                </div>
-                
-                <!-- Vino 3 -->
-                <div class="wine-card">
-                    <div class="wine-circle"></div>
-                    <img src="../imgs/vino4.png" alt="Vino tinto" class="wine-image">
-                    <div class="wine-info">
-                        <div class="wine-type">Sabor a frutos rojos</div>
-                        <div class="wine-description">Cepa: Tannat, Cabernet Franc, Merlot, Moscatel<br>Seco - Tarija Bolivia</div>
-                        <div class="wine-price">Cañon Escondido</div>
-                    </div>
-                </div>
-                
-                <!-- Vino 4 -->
-                <div class="wine-card">
-                    <div class="wine-circle"></div>
-                    <img src="../imgs/vino5.png" alt="Vino rosado" class="wine-image">
-                    <div class="wine-info">
-                        <div class="wine-type">Sabor a frutos cítricos y manzana</div>
-                        <div class="wine-description">Cepa: Muscat Blanc, Moscatel de Alejandría<br>Dulce - Tarija 2021</div>
-                        <div class="wine-price">Cañon Escondido</div>
-                    </div>
-                </div>
-                
-                <!-- Vino 5 -->
-                <div class="wine-card">
-                    <div class="wine-circle"></div>
-                    <img src="../imgs/vino6.png" alt="Vino tinto" class="wine-image">
-                    <div class="wine-info">
-                        <div class="wine-type">Sabor a frutos negros, vainilla y canela</div>
-                        <div class="wine-description">Cepa: Cabernet Sauvignon (Nacienda Anhelada)<br>Tarija Bolivia 2019</div>
-                        <div class="wine-price">Magnus</div>
-                    </div>
-                </div>
-            </div>
+        <div class="hero-description">
+          <p>
+            Cada plato es elaborado con diferentes tipos de ingredientes de
+            sectores de Bolivia<br />Hay Menus de 4, 5 a 6 tiempos Desde
+            entrada, platos fuertes y postres, con exquisitos sabores
+          </p>
         </div>
-        
-        <button class="nav-btn next-btn" onclick="moveCarousel(1)">&#10095;</button>
-    </div>
-</div>
+      </section>
+      <script>
+        const plates = [
+          {
+            image: "../imgs/Sin_título-2.png",
+            description:
+              "Entrada de quinoa con verduras andinas y aderezo de hierbas aromáticas de la región",
+          },
+          {
+            image: "../imgs/Sin título-3 (1).png",
+            description:
+              "Trucha del Titicaca con salsa de ají amarillo y guarnición de tubérculos nativos",
+          },
+          {
+            image: "../imgs/Sin título-20 (1).png",
+            description:
+              "Postre de api morado con especias y frutas del valle cochabambino",
+          },
+          {
+            image: "../imgs/Sin título-25 (1).png",
+            description:
+              "Chupe de camarones del lago con toque de huacatay y limón",
+          },
+          {
+            image: "../imgs/Sin título-28 (1).png",
+            description: "Plato fuerte de lomo saltado con papa imilla y chuño",
+          },
+        ];
 
-<script>
-    // Variables globales para el carrusel
-    let currentPosition = 0;
-    let cardWidth;
-    let visibleCards;
-    let maxPosition;
-    let carousel;
-    
-    // Inicialización
-    document.addEventListener('DOMContentLoaded', function() {
-        carousel = document.getElementById('wineCarousel');
-        updateCarouselSettings();
-        
-        // Actualizar configuración cuando cambia el tamaño de la ventana
-        window.addEventListener('resize', function() {
-            updateCarouselSettings();
-            setCarouselPosition();
+        let currentIndex = 0;
+
+        // Obtener elementos del DOM
+        const mainPlateImg = document.querySelector(".main-plate");
+        const leftPlateImg = document.querySelector(
+          ".side-plates img:first-child"
+        );
+        const rightPlateImg = document.querySelector(
+          ".side-plates img:last-child"
+        );
+        const leftArrow = document.querySelector(".arrow:first-child");
+        const rightArrow = document.querySelector(".arrow:last-child");
+        const descriptionText = document.querySelector(".hero-description p");
+
+        // Función para actualizar el plato principal
+        function updateMainPlate() {
+          const currentPlate = plates[currentIndex];
+
+          // Añadir clase para animación de salida
+          mainPlateImg.classList.add("fade-out");
+
+          // Después de la animación de salida, actualizar imagen y hacer animación de entrada
+          setTimeout(() => {
+            mainPlateImg.src = currentPlate.image;
+            descriptionText.innerHTML = currentPlate.description;
+
+            // Eliminar clase de salida y añadir clase de entrada
+            mainPlateImg.classList.remove("fade-out");
+            mainPlateImg.classList.add("fade-in");
+
+            // Eliminar clase de entrada después de que termine la animación
+            setTimeout(() => {
+              mainPlateImg.classList.remove("fade-in");
+            }, 500);
+          }, 300);
+
+          // Actualizar los platos laterales para mostrar los platos anterior y siguiente
+          updateSidePlates();
+        }
+
+        // Función para actualizar los platos laterales
+        function updateSidePlates() {
+          // Índice del plato anterior (con wraparound)
+          const prevIndex = (currentIndex - 1 + plates.length) % plates.length;
+          // Índice del plato siguiente (con wraparound)
+          const nextIndex = (currentIndex + 1) % plates.length;
+
+          // Actualizar imágenes de los platos laterales
+          leftPlateImg.src = plates[prevIndex].image;
+          rightPlateImg.src = plates[nextIndex].image;
+        }
+
+        // Listener para la flecha izquierda
+        leftArrow.addEventListener("click", () => {
+          currentIndex = (currentIndex - 1 + plates.length) % plates.length;
+          updateMainPlate();
         });
-    });
-    
-    // Función para actualizar la configuración del carrusel
-    function updateCarouselSettings() {
-        const cards = document.querySelectorAll('.wine-card');
+
+        // Listener para la flecha derecha
+        rightArrow.addEventListener("click", () => {
+          currentIndex = (currentIndex + 1) % plates.length;
+          updateMainPlate();
+        });
+
+        // También permitir que se haga clic en los platos laterales para navegar
+        leftPlateImg.addEventListener("click", () => {
+          currentIndex = (currentIndex - 1 + plates.length) % plates.length;
+          updateMainPlate();
+        });
+
+        rightPlateImg.addEventListener("click", () => {
+          currentIndex = (currentIndex + 1) % plates.length;
+          updateMainPlate();
+        });
+
+        // Inicializar la visualización
+        document.addEventListener("DOMContentLoaded", () => {
+          updateMainPlate();
+
+          // Agregar eventos de hover para los platos laterales
+          leftPlateImg.addEventListener("mouseenter", () => {
+            leftPlateImg.classList.add("hover-effect");
+          });
+
+          leftPlateImg.addEventListener("mouseleave", () => {
+            leftPlateImg.classList.remove("hover-effect");
+          });
+
+          rightPlateImg.addEventListener("mouseenter", () => {
+            rightPlateImg.classList.add("hover-effect");
+          });
+
+          rightPlateImg.addEventListener("mouseleave", () => {
+            rightPlateImg.classList.remove("hover-effect");
+          });
+        });
+      </script>
+      <section class="menu-section">
+        <h2>MENÚS DE TIEMPOS</h2>
+
+        <!-- 4 Times Menu -->
+        <div class="menu-option">
+          <h3>Degustación de 4 tiempos</h3>
+          <div class="menu-details">
+            <div class="menu-item">
+              <div class="menu-item-title">1 ENTRADA</div>
+              <div class="menu-item-description">Bollero de tunta</div>
+            </div>
+            <div class="menu-item">
+              <div class="menu-item-title">2 PLATOS FUERTES</div>
+              <div class="menu-item-description">
+                Gratin de pashe relleno de tuna carnosa de nopal, reducción de
+                vinagre de chichi y chirimé
+              </div>
+            </div>
+            <div class="menu-item">
+              <div class="menu-item-title">1 POSTRE</div>
+              <div class="menu-item-description">
+                Mousse de mandarina, salpicón de ratafia de frutos de canela de
+                trólesis y limoncillo
+              </div>
+            </div>
+          </div>
+          <div class="price-reserve">
+            <div class="price">120 bs.</div>
+            <button class="reserve-btn">Reservar</button>
+          </div>
+        </div>
+
+        <!-- 5 Times Menu -->
+        <div class="menu-option">
+          <h3>Degustación de 5 tiempos</h3>
+          <div class="menu-details">
+            <div class="menu-item">
+              <div class="menu-item-title">2 ENTRADA</div>
+              <div class="menu-item-description">
+                Juzu Ushu<br />Ají de pataska
+              </div>
+            </div>
+            <div class="menu-item">
+              <div class="menu-item-title">2 PLATOS FUERTES</div>
+              <div class="menu-item-description">
+                Charque Vallicantano<br />Chiriuchu de Llama
+              </div>
+            </div>
+            <div class="menu-item">
+              <div class="menu-item-title">1 POSTRE</div>
+              <div class="menu-item-description">Espuma<br />Caramelizada</div>
+            </div>
+          </div>
+          <div class="price-reserve">
+            <div class="price">150 bs.</div>
+            <button class="reserve-btn">Reservar</button>
+          </div>
+        </div>
+
+        <!-- 6 Times Menu -->
+        <div class="menu-option">
+          <h3>Degustación de 6 tiempos</h3>
+          <div class="menu-details">
+            <div class="menu-item">
+              <div class="menu-item-title">2 ENTRADA</div>
+              <div class="menu-item-description">
+                LLajpachi<br />Achojcha relleno
+              </div>
+            </div>
+            <div class="menu-item">
+              <div class="menu-item-title">2 PLATOS FUERTES</div>
+              <div class="menu-item-description">
+                Kiwi<br />Ají de Cochayuyo
+              </div>
+            </div>
+            <div class="menu-item">
+              <div class="menu-item-title">2 POSTRE</div>
+              <div class="menu-item-description">
+                Locoto relleno<br />Tortillas
+              </div>
+            </div>
+          </div>
+          <div class="price-reserve">
+            <div class="price">165 bs.</div>
+            <button class="reserve-btn">Reservar</button>
+          </div>
+        </div>
+
+        <div class="allergen-info">
+          <p>
+            Para opciones veganas, libres de gluten u otras
+            alergias/intolerancias, por favor contactarse con el restaurante con
+            al menos 24 horas de anticipación.
+          </p>
+        </div>
+      </section>
+
+      <section class="plate-structure">
+        <h2>Estructura de Platos</h2>
+
+        <!-- First plate item - Tunta -->
+        <div class="plate-details">
+          <div class="plate-item-title">Tunta rellena de filete de alpaca</div>
+          <div class="plate-image-wrapper">
+            <img
+              src="../imgs/estruc-plat1.png"
+              alt="Tunta rellena"
+              class="plate-image"
+            />
+
+            <!-- Ilusión arrow -->
+            <div class="dish-arrow right-arrow">
+              <div class="arrow-oval">
+                <div class="arrow-line"></div>
+              </div>
+              <div class="dish-description">
+                <div class="dish-label">Ilusión</div>
+                <div class="dish-text">
+                  Son virutas de insumos criados antes de servir y mejorar la
+                  presentación y sabor.
+                </div>
+              </div>
+            </div>
+
+            <!-- Tunta arrow -->
+            <div class="dish-arrow bottom-arrow">
+              <div class="arrow-oval">
+                <div class="arrow-line diagonal"></div>
+              </div>
+              <div class="dish-description">
+                <div class="dish-label">Tunta</div>
+                <div class="dish-text">
+                  Producto deshidratado que se obtiene de la variedad de la papa
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Second plate item - Huariata -->
+          <div class="plate-item-huariata">
+            <!-- Huariata arrow -->
+            <div class="dish-arrow left-arrow">
+              <div class="dish-description text-right">
+                <div class="dish-label">Huariata</div>
+                <div class="dish-text">
+                  Producto deshidratado que se obtiene de los tubérculos de la
+                  papa
+                </div>
+              </div>
+              <div class="arrow-oval">
+                <div class="arrow-line left-line"></div>
+              </div>
+            </div>
+
+            <div class="plate-image-wrapper">
+              <img
+                src="../imgs/estruc-menu2.png"
+                alt="Huariata"
+                class="plate-image"
+              />
+            </div>
+
+            <div class="plate-item-title right-aligned">
+              Huariata plato a base de la cabeza de cerdo y ají
+            </div>
+
+            <!-- Relleno de phasa arrow -->
+            <div class="dish-arrow bottom-right-arrow">
+              <div class="dish-description text-right">
+                <div class="dish-label">Relleno de phasa</div>
+                <div class="dish-text">
+                  Producto deshidratado que se obtiene de los tubérculos de la
+                  papa
+                </div>
+              </div>
+              <div class="arrow-oval">
+                <div class="arrow-line diagonal-right"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <div class="Native-seccion">
+      <h2>Ingredientes Nativos de Bolivia</h2>
+
+      <div class="carousel-container">
+        <button class="nav-btn prev-btn">&#10094;</button>
+
+        <div class="carousel">
+          <div class="ingredient-card">
+            <img
+              src="../imgs/ingred-2.png"
+              alt="Phasa arcilla"
+              class="ingredient-image"
+            />
+            <div class="ingredient-name">Phasa (arcilla comestible)</div>
+            <div class="ingredient-description">
+              La Phasa es una arcilla que se encuentra en diferentes partes de
+              Bolivia. Se consume como alimento o con fines medicinales
+              tradicionales.
+            </div>
+          </div>
+
+          <div class="ingredient-card">
+            <img
+              src="../imgs/ingred-nat2.png"
+              alt="Semillas"
+              class="ingredient-image"
+            />
+            <div class="ingredient-name">Semillas</div>
+            <div class="ingredient-description">
+              La diversidad biológica tiene granos y semillas llenas de valor y
+              nutrientes andinos. Alto porcentaje de proteínas, baja integración
+              grasa de omega, calcio, hierro, potasio y zinc.
+            </div>
+          </div>
+
+          <div class="ingredient-card">
+            <img
+              src="../imgs/quinus (1).png"
+              alt="Cañahua en grano"
+              class="ingredient-image"
+            />
+            <div class="ingredient-name">Cañahua en grano</div>
+            <div class="ingredient-description">
+              Alimento cultivado, alto valor nutricional, proteína y
+              aminoácidos, perfecto cereal orgánico como quinua en la
+              alimentación.
+            </div>
+          </div>
+
+          <div class="ingredient-card">
+            <img
+              src="../imgs/tuyus (1).png"
+              alt="Ajipa"
+              class="ingredient-image"
+            />
+            <div class="ingredient-name">Ajipa</div>
+            <div class="ingredient-description">
+              Tubérculo andino tradicionalmente consumido crudo por su dulce
+              sabor refrescante. Rico en proteínas, vitaminas y minerales
+              esenciales.
+            </div>
+          </div>
+        </div>
+
+        <button class="nav-btn next-btn">&#10095;</button>
+      </div>
+    </div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const carousel = document.querySelector(".carousel");
+        const prevBtn = document.querySelector(".prev-btn");
+        const nextBtn = document.querySelector(".next-btn");
+        const cards = document.querySelectorAll(".ingredient-card");
+
+        let currentIndex = 0;
+        let cardWidth = cards[0].offsetWidth + 20; // card width + margin
+        let cardsToShow = calculateCardsToShow();
+
+        // Calculate visible cards based on screen width
+        function calculateCardsToShow() {
+          if (window.innerWidth > 1200) return 4;
+          if (window.innerWidth > 992) return 3;
+          if (window.innerWidth > 576) return 2;
+          return 1;
+        }
+
+        // Update card width on window resize
+        window.addEventListener("resize", function () {
+          cardWidth = cards[0].offsetWidth + 20;
+          cardsToShow = calculateCardsToShow();
+          updateCarousel();
+        });
+
+        function updateCarousel() {
+          carousel.style.transform = `translateX(-${
+            currentIndex * cardWidth
+          }px)`;
+        }
+
+        prevBtn.addEventListener("click", function () {
+          if (currentIndex > 0) {
+            currentIndex--;
+            updateCarousel();
+          }
+        });
+
+        nextBtn.addEventListener("click", function () {
+          if (currentIndex < cards.length - cardsToShow) {
+            currentIndex++;
+            updateCarousel();
+          }
+        });
+      });
+    </script>
+
+    <div class="Native-seccion">
+      <h2>Vinos de Bolivia</h2>
+
+      <div class="carousel-wrapper">
+        <button class="nav-btn prev-btn" onclick="moveCarousel(-1)">
+          &#10094;
+        </button>
+
+        <div class="carousel-container">
+          <div class="carousel" id="wineCarousel">
+            <!-- Vino 1 -->
+            <div class="wine-card">
+              <div class="wine-circle"></div>
+              <img
+                src="../imgs/vino2.png"
+                alt="Vino blanco"
+                class="wine-image"
+              />
+              <div class="wine-info">
+                <div class="wine-type">Vino blanco</div>
+                <div class="wine-description">
+                  Sabor lírico<br />Cepa: Sauvignon Blanco<br />Semidulce -
+                  Santa Cruz
+                </div>
+                <div class="wine-price">1750</div>
+              </div>
+            </div>
+
+            <!-- Vino 2 -->
+            <div class="wine-card">
+              <div class="wine-circle"></div>
+              <img
+                src="../imgs/vino3.png"
+                alt="Vino tinto"
+                class="wine-image"
+              />
+              <div class="wine-info">
+                <div class="wine-type">
+                  Sabor a frutos rojos y negros maduros
+                </div>
+                <div class="wine-description">
+                  Cepa: Malbec (Reserva)<br />Seco - Tarija Bolivia
+                </div>
+                <div class="wine-price">Cañon Escondido</div>
+              </div>
+            </div>
+
+            <!-- Vino 3 -->
+            <div class="wine-card">
+              <div class="wine-circle"></div>
+              <img
+                src="../imgs/vino4.png"
+                alt="Vino tinto"
+                class="wine-image"
+              />
+              <div class="wine-info">
+                <div class="wine-type">Sabor a frutos rojos</div>
+                <div class="wine-description">
+                  Cepa: Tannat, Cabernet Franc, Merlot, Moscatel<br />Seco -
+                  Tarija Bolivia
+                </div>
+                <div class="wine-price">Cañon Escondido</div>
+              </div>
+            </div>
+
+            <!-- Vino 4 -->
+            <div class="wine-card">
+              <div class="wine-circle"></div>
+              <img
+                src="../imgs/vino5.png"
+                alt="Vino rosado"
+                class="wine-image"
+              />
+              <div class="wine-info">
+                <div class="wine-type">Sabor a frutos cítricos y manzana</div>
+                <div class="wine-description">
+                  Cepa: Muscat Blanc, Moscatel de Alejandría<br />Dulce - Tarija
+                  2021
+                </div>
+                <div class="wine-price">Cañon Escondido</div>
+              </div>
+            </div>
+
+            <!-- Vino 5 -->
+            <div class="wine-card">
+              <div class="wine-circle"></div>
+              <img
+                src="../imgs/vino6.png"
+                alt="Vino tinto"
+                class="wine-image"
+              />
+              <div class="wine-info">
+                <div class="wine-type">
+                  Sabor a frutos negros, vainilla y canela
+                </div>
+                <div class="wine-description">
+                  Cepa: Cabernet Sauvignon (Nacienda Anhelada)<br />Tarija
+                  Bolivia 2019
+                </div>
+                <div class="wine-price">Magnus</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <button class="nav-btn next-btn" onclick="moveCarousel(1)">
+          &#10095;
+        </button>
+      </div>
+    </div>
+
+    <script>
+      // Variables globales para el carrusel
+      let currentPosition = 0;
+      let cardWidth;
+      let visibleCards;
+      let maxPosition;
+      let carousel;
+
+      // Inicialización
+      document.addEventListener("DOMContentLoaded", function () {
+        carousel = document.getElementById("wineCarousel");
+        updateCarouselSettings();
+
+        // Actualizar configuración cuando cambia el tamaño de la ventana
+        window.addEventListener("resize", function () {
+          updateCarouselSettings();
+          setCarouselPosition();
+        });
+      });
+
+      // Función para actualizar la configuración del carrusel
+      function updateCarouselSettings() {
+        const cards = document.querySelectorAll(".wine-card");
         if (cards.length === 0) return;
-        
+
         // Calcular el ancho de la tarjeta
         cardWidth = cards[0].offsetWidth;
-        
+
         // Determinar cuántas tarjetas son visibles según el ancho de la ventana
-        const containerWidth = document.querySelector('.carousel-container').offsetWidth;
+        const containerWidth = document.querySelector(
+          ".carousel-container"
+        ).offsetWidth;
         visibleCards = Math.floor(containerWidth / cardWidth);
-        
+
         // Limitar visibleCards a un mínimo de 1
         visibleCards = Math.max(1, visibleCards);
-        
+
         // Calcular la posición máxima
         maxPosition = Math.max(0, cards.length - visibleCards);
-        
+
         // Asegurar que la posición actual sea válida
         if (currentPosition > maxPosition) {
-            currentPosition = maxPosition;
-            setCarouselPosition();
+          currentPosition = maxPosition;
+          setCarouselPosition();
         }
-    }
-    
-    // Función para mover el carrusel
-    function moveCarousel(direction) {
+      }
+
+      // Función para mover el carrusel
+      function moveCarousel(direction) {
         // Actualizar posición
         currentPosition += direction;
-        
+
         // Mantener posición dentro de los límites
         if (currentPosition < 0) currentPosition = 0;
         if (currentPosition > maxPosition) currentPosition = maxPosition;
-        
+
         // Aplicar la transformación
         setCarouselPosition();
-    }
-    
-    // Función para establecer la posición del carrusel
-    function setCarouselPosition() {
+      }
+
+      // Función para establecer la posición del carrusel
+      function setCarouselPosition() {
         const translateX = -currentPosition * cardWidth;
         carousel.style.transform = `translateX(${translateX}px)`;
-    }
-</script>
+      }
+    </script>
 
-    <footer>
-        <div class="footer-container">
-            <!-- Información de contacto -->
-            <div class="contact-info">
-                <div class="info-item">
-                    <img src="../imgs/MARCA/Recurso10.png" alt="Ubicación">
-                    <span>20 de octubre Esquina Pasaje Medinacelli, 2228 La Paz - Bolivia</span>
-                </div>
-                <div class="info-item">
-                    <img src="../imgs/MARCA/Capa_1 (1).png" alt="Email">
-                    <span>angelf196@gmail.com</span>
-                </div>
-                <div class="info-item">
-                    <img src="../imgs/MARCA/ic_baseline-whatsapp.png" alt="WhatsApp">
-                    <span>+591 77728323</span>
-                </div>
-            </div>
-    
-            <!-- Logo -->
-            <div class="footer-logo">
-                <img src="../imgs/MARCA/mi chola-marca.png" alt="MICHOLA">
-            </div>
-    
-            <!-- Horarios -->
-            <div class="hours">
-                <strong>Horarios:</strong>
-                <p>Lun - Sáb 12:00 a 22:00 p.m.</p>
-                <p>Domingo: Cerrado</p>
-                <p>Feriados con reservas</p>
-            </div>
-    
-            <!-- Redes Sociales -->
-            <div class="social-icons">
-                <a href="#"><img src="../imgs/MARCA/mingcute_facebook-line.png" alt="Facebook"></a>
-                <a href="#"><img src="../imgs/MARCA/mdi_instagram.png" alt="Instagram"></a>
-                <a href="#"><img src="../imgs/MARCA/Vector.png" alt="TikTok"></a>
-            </div>
-        </div>
-    
-        <div class="footer-bottom">
-            © Copyring 2025 Restaurante - Mi Chola - Todos los derechos reservados
-        </div>
-    </footer>
-    
-</body>
+    <div id="header-container"></div>
+    <div id="footer-container"></div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        fetch("./header.html")
+          .then((response) => response.text())
+          .then((data) => {
+            document.getElementById("header-container").innerHTML = data;
+          })
+          .catch((error) => console.error("Error cargando el footer:", error));
+        fetch("./footer.html")
+          .then((response) => response.text())
+          .then((data) => {
+            document.getElementById("footer-container").innerHTML = data;
+          })
+          .catch((error) => console.error("Error cargando el footer:", error));
+      });
+    </script>
+
+    <script type="text/javascript">
+      function mostrarMensaje(nombre) {
+        console.log("Hiciste click en: " + nombre);
+      }
+    </script>
+
+    <!-- Menu Tasting Options Section -->
+  </body>
 </html>

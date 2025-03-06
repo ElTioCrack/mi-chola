@@ -1,13 +1,3 @@
-/* Estilos para fuentes Lato y Marcellus */
-@font-face {
-    font-family: 'Lato';
-    src: url('../fonts/Lato/Lato-BlackItalic.ttf') format('truetype'); /* Ajusta la ruta según el nombre del archivo */
-}
-
-@font-face {
-    font-family: 'Marcellus';
-    src: url('../fonts/Marcellus/Marcellus-Regular.ttf') format('truetype'); /* Ajusta la ruta según el nombre del archivo */
-}
 /* Estilos generales */
 /* Establecer la imagen de fondo para toda la página */
 body {
@@ -67,11 +57,12 @@ nav ul li a {
     background-size: cover; /* Asegura que la imagen cubra todo el fondo */
     background-repeat: no-repeat; /* No repite la imagen */
     background-position: center; /* Centra la imagen */
-    padding: 20px;
     background-color: white;
-    margin: 20px;
     border-radius: 8px;
-    height: 400px; /* Ajusta la altura según tus necesidades */
+    height: 100vh; /* Ajusta la altura según tus necesidades */
+    display: flex;
+    justify-content: start;
+    align-items: end;
 }
 
 .eventos-section {
@@ -152,6 +143,7 @@ nav ul li a {
     margin: 20px;
     border-radius: 8px;
     height: 400px; /* Ajusta la altura según tus necesidades */
+    
 }
 
 
@@ -252,20 +244,4 @@ button {
 button:hover {
     background-color: #555; /* Color más claro al pasar el ratón */
 }
-/* Pie de página */
-footer {
-    background-color: #333;
-    color: white;
-    text-align: center;
-    padding: 20px;
-}
-
-.footer-info {
-    margin-bottom: 10px;
-}
-
-.social-media a {
-    margin: 0 10px;
-    color: white;
-    text-decoration: none;
-}
+j
