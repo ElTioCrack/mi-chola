@@ -1,109 +1,170 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Mi Chola - Inicio</title>
     <link href="./css/styles.css" rel="stylesheet" type="text/css" />
-    <link rel="stylesheet" href="css/index.css">
-</head>
-<body>
-    
+    <link rel="stylesheet" href="css/index.css" />
+  </head>
+  <body>
     <main>
-        <section class="slider">
-            <figure>
-              <!-- Imagen 1 -->
-              <img src="imgs/slider-inicio/slider1.png" alt="Plato gourmet 1">
-              <!-- Imagen 2 -->
-              <img src="imgs/slider-inicio/slideer2.png" alt="Plato gourmet 2">
-              <!-- Imagen 3 -->
-              <img src="imgs/slider-inicio/slider3.png" alt="Plato gourmet 3">
-              <!-- Imagen 4 -->
-              <img src="imgs/slider-inicio/slideer4.png" alt="Plato gourmet 4">
-            </figure>
-          </section>
-          <section class="description-section">
-            <div class="description">
-              <p>
-                En Mi Chola, celebramos lo mejor de la cocina tradicional boliviana donde se fusiona recetas ancestrales con un toque contemporáneo creando experiencias culinarias únicas que honran la rica diversidad de sabores de nuestra tierra.
-              </p>
-            </div>
-          </section>
+      <section class="slider">
+        <div class="slide active">
+          <img src="imgs/slider-inicio/slider1.png" alt="Plato gourmet 1" />
+        </div>
+        <div class="slide">
+          <img src="imgs/slider-inicio/slideer2.png" alt="Plato gourmet 2" />
+        </div>
+        <div class="slide">
+          <img src="imgs/slider-inicio/slider3.png" alt="Plato gourmet 3" />
+        </div>
+        <div class="slide">
+          <img src="imgs/slider-inicio/slideer4.png" alt="Plato gourmet 4" />
+        </div>
+      </section>
 
+      <section class="description-section">
+        <div class="description-container">
+          <p>
+            En Mi Chola, celebramos lo mejor de la cocina tradicional boliviana,
+            donde se fusionan recetas ancestrales con un toque contemporáneo,
+            creando experiencias culinarias únicas que honran la rica diversidad
+            de sabores de nuestra tierra.
+          </p>
+        </div>
+      </section>
 
-          <section class="exposicion-arte">
-            <div class="card-container">
-                <div class="image-container">
-                  <img src="imgs/Group 230 (1).png" alt="Exposición de Arte" class="hover-zoom">
-                  <div class="content-overlay">
-                    <h2 class="title-hover">Exposición de Arte</h2>
-                    <p>En Mi Chola, fusionamos lo mejor de la alta cocina Boliviana con un espacio que exalta el talento y la expresión artística de nuestro país. Nuestra Exposición de Arte es un homenaje a la diversidad visual de Bolivia, donde cada obra seleccionada refleja la sofisticación y la esencia contemporánea de nuestra cultura.</p>
-                    <button class="btn-hover">Ver más</button>
-                  </div>
-                </div>
-              </div>
-          </section>
+      <section class="art-exhibit">
+        <div class="art-container">
+          <!-- Imagen con efecto de zoom -->
+          <div
+            href="http://3.15.208.217/pages/exposicion_de_arte.html"
+            class="art-image-link"
+          >
+            <div class="art-image"></div>
+          </div>
 
-          <div class="container">
-            <div class="image-section">
-                <img src="imgs/event-tecno.png" alt="Eventos">
-            </div>
-            <div class="text-section">
-                <h1>Eventos</h1>
-                <p>En Mi Chola, cada evento es una experiencia inolvidable. Ofrecemos un entorno elegante y acogedor, ideal para celebrar desde reuniones íntimas hasta grandes ocasiones, con el toque único de nuestra gastronomía boliviana contemporánea.</p>
-                <a href="#" class="cta-button">Ver más</a>
-            </div>
+          <!-- Contenido (Título, Descripción y Botón) -->
+          <div class="art-content">
+            <a
+              href="http://3.15.208.217/pages/exposicion_de_arte.html"
+              class="art-title"
+              >Exposición de Arte</a
+            >
+            <p class="art-text">
+              En Mi Chola, fusionamos lo mejor de la alta cocina boliviana con
+              un espacio que exalta el talento y la expresión artística de
+              nuestro país. Nuestra Exposición de Arte es un homenaje a la
+              diversidad visual de Bolivia, donde cada obra seleccionada refleja
+              la sofisticación y la esencia contemporánea de nuestra cultura.
+            </p>
+            <a
+              href="http://3.15.208.217/pages/exposicion_de_arte.html"
+              class="art-button"
+              >Descubrir Más</a
+            >
+          </div>
+        </div>
+      </section>
+
+      <section class="event-section">
+        <!-- Columna Izquierda: Imagen con hover -->
+        <div class="event-left">
+          <div class="hover-image-container">
+            <img
+              src="imgs/event-tecno.png"
+              alt="Imagen por defecto"
+              class="hover-img default-img"
+            />
+            <img
+              src="imgs/402943419_18205328689278486_7336988103873050656_n (1) 1.png"
+              alt="Imagen hover"
+              class="hover-img hover-img-active"
+            />
+          </div>
         </div>
 
+        <!-- Columna Derecha: Contenido -->
+        <div class="event-right">
+          <a href="http://3.15.208.217/pages/eventos.html" class="event-title"
+            >Eventos</a
+          >
+          <p class="event-text">
+            En Mi Chola, cada evento es una experiencia inolvidable. Ofrecemos
+            un entorno elegante y acogedor, ideal para celebrar desde reuniones
+            íntimas hasta grandes ocasiones, con el toque único de nuestra
+            gastronomía boliviana contemporánea.
+          </p>
+          <a href="http://3.15.208.217/pages/eventos.html" class="event-button"
+            >Ver Más</a
+          >
+        </div>
+      </section>
 
-        <section class="catering">
-            <div class="content">
-                <h1>Catering</h1>
-                <p>En Mi Chola, no solo te ofrecemos una experiencia única en nuestro restaurante, también llevamos nuestra cocina boliviana contemporánea a donde tú quieras. Nuestro servicio de catering está diseñado para impresionar, con menús personalizados que destacan lo mejor de nuestros sabores y la calidad gourmet que nos define.</p>
-                <a href="#ver-mas" class="btn">Ver más</a>
-            </div>
-            <div class="images">
-                <div class="image buffet">
-                    <h2>Buffet gourmet</h2>
-                </div>
-                <div class="image degustaciones">
-                    <h2>Degustaciones exclusivas</h2>
-                </div>
-            </div>
-        </section>
+      <section class="catering">
+        <div class="content">
+          <h1>Catering</h1>
+          <p>
+            En Mi Chola, no solo te ofrecemos una experiencia única en nuestro
+            restaurante, también llevamos nuestra cocina boliviana contemporánea
+            a donde tú quieras. Nuestro servicio de catering está diseñado para
+            impresionar, con menús personalizados que destacan lo mejor de
+            nuestros sabores y la calidad gourmet que nos define.
+          </p>
+          <a href="http://3.15.208.217/pages/servicio_de_catering.html" class="btn">Ver más</a>
+        </div>
+        <div class="images">
+          <div class="image buffet">
+            <h2>Buffet gourmet</h2>
+          </div>
+          <div class="image degustaciones">
+            <h2>Degustaciones exclusivas</h2>
+          </div>
+        </div>
+      </section>
 
-        <section class="nosotros">
-            <div class="container-nosotros">
-                <div class="overlay-nosotros">
-                    <h1>Nosotros</h1>
-                    <p>Nuestro personal no solo se dedica a servir, sino que también comparte con entusiasmo su amor por la cultura y la gastronomía boliviana.</p>
-                    <a href="#" class="btn">Ver más</a>
-                </div>
-            </div>
-        </section>
+      <section class="nosotros">
+        <div class="container-nosotros">
+          <div class="overlay-nosotros">
+            <h1>Nosotros</h1>
+            <p>
+              Nuestro personal no solo se dedica a servir, sino que también
+              comparte con entusiasmo su amor por la cultura y la gastronomía
+              boliviana.
+            </p>
+            <a href="http://3.15.208.217/pages/nosotros.html" class="btn">Ver más</a>
+          </div>
+        </div>
+      </section>
 
-        <section class="ultimo">
-            <div class="container-ult"> <!-- Contenedor principal -->
-                <div class="header"> <!-- Sección de la cabecera -->
-                    <div class="icon"> <!-- Icono de botella -->
-                        <img src="imgs/MARCA - PICTOGRAMAS/Recurso 6.png" alt="Maridaje"> <!-- Ruta de la imagen -->
-                        <p>Maridaje</p> <!-- Texto debajo del icono -->
-                    </div>
-                    <div class="icon"> <!-- Icono de sombrero -->
-                        <img src="imgs/MARCA - PICTOGRAMAS/Recurso 1.png" alt="Reservas"> <!-- Ruta de la imagen -->
-                        <p>Reservas</p>
-                    </div>
-                    <div class="icon"> <!-- Icono de pastel -->
-                        <img src="imgs/MARCA - PICTOGRAMAS/Recurso 2.png" alt="Cotización"> <!-- Ruta de la imagen -->
-                        <p>Cotización Servicios: Catering - Eventos</p>
-                    </div>
-                </div>
-            </div>
-        </section>
+      <section class="three-column-section">
+        <div class="column">
+          <img src="imgs/MARCA - PICTOGRAMAS/Recurso 6.png" alt="Imagen 1" />
+          <p>Maridaje</p>
+        </div>
+        <div class="column">
+          <img src="imgs/MARCA - PICTOGRAMAS/Recurso 1.png" alt="Imagen 2" />
+          <p>Reservas</p>
+        </div>
+        <div class="column">
+          <img src="imgs/MARCA - PICTOGRAMAS/Recurso 2.png" alt="Imagen 3" />
+          <p>Cotización</p>
+          <p>Servicios:</p>
+          <p>Catering - Eventos</p>
+        </div>
+      </section>
 
-        <script src="script.js"></script>
+      <section class="full-image-section">
+        <img
+          src="imgs/inicio-puerta.png"
+          alt="Imagen destacada"
+          class="full-image"
+        />
+      </section>
+
+      <script src="script.js"></script>
     </main>
-
 
     <div id="header-container"></div>
     <div id="footer-container"></div>
@@ -131,5 +192,6 @@
       }
     </script>
 
-</body>
+    <script type="text/javascript" src="./js/index.js"></script>
+  </body>
 </html>

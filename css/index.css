@@ -1,413 +1,661 @@
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-image: url('../imgs/FONDOS/fondo\ blanco\ degr.png');
-    background-size: cover;       /* La imagen cubrirá todo el fondo */
-    background-repeat: no-repeat; /* Evita que se repita la imagen */
-    background-position: center center; /* Centra la imagen en el fondo */
-}
-
-
-
-header {
-    background-color: black;
-    color: white;
-    padding: 20px;
-    text-align: center;
-}
-
-.logo {
-    font-size: 24px;
-    font-weight: bold;
-}
-
-nav ul {
-    list-style: none;
-    padding: 0;
-}
-
-nav ul li {
-    display: inline;
-    margin: 0 15px;
-}
-
-nav ul li a {
-    color: white;
-    text-decoration: none;
-}
-
-/* Contenedor principal del slider */
-.slider {
-  width: 80%;               /* Ajusta el ancho según tus necesidades */
-  max-width: 1200px;        /* Ancho máximo opcional */
-  margin: 0 auto;           /* Centra horizontalmente */
-  position: relative;       /* Para poder posicionar las imágenes absolutamente */
-  height: 800px;            /* Altura fija (o ajusta según tus imágenes) */
-  overflow: hidden;         /* Oculta cualquier exceso de imagen */
-}
-
-/* El 'figure' agrupa todas las imágenes */
-.slider figure {
-  position: relative; 
-  width: 100%;
-  height: 100%;
+  font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
+  background-image: url('../imgs/FONDOS/fondo\ blanco\ degr.png');
+  background-size: cover;
+  /* La imagen cubrirá todo el fondo */
+  background-repeat: no-repeat;
+  /* Evita que se repita la imagen */
+  background-position: center center;
+  /* Centra la imagen en el fondo */
 }
 
-/* Cada imagen se posiciona absoluta y se va mostrando/ocultando con animación */
-.slider figure img {
-  position: absolute; 
-  top: 0;
-  left: 0;
+
+/* -------------------------------------------------------------------------- */
+/* Slider */
+.slider {
+  position: relative;
   width: 100%;
-  height: 100%;        /* Asegura que ocupe toda la altura del slider */
-  object-fit: cover;   /* Cubre el espacio sin deformar la imagen */
-  opacity: 0;          /* Comienza invisible */
-  animation: fade 16s infinite ease-in-out;
-  /* 
-    16s: duración total de la animación
-    infinite: se repite indefinidamente
-    ease-in-out: transición suave
-  */
+  height: 100vh;
+  overflow: hidden;
 }
 
-/* Para que cada imagen aparezca en distinto intervalo, usamos delays */
-.slider figure img:nth-child(1) {
-  animation-delay: 0s;
-}
-.slider figure img:nth-child(2) {
-  animation-delay: 4s;   /* Empieza 4 segundos después */
-}
-.slider figure img:nth-child(3) {
-  animation-delay: 8s;   /* Empieza 8 segundos después */
-}
-.slider figure img:nth-child(4) {
-  animation-delay: 12s;  /* Empieza 12 segundos después */
+/* Cada imagen ocupa toda la pantalla */
+.slide {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 1.5s ease-in-out;
 }
 
-/* Definimos la animación 'fade' */
-@keyframes fade {
-  0% { opacity: 0; }    /* Al inicio está invisible */
-  10% { opacity: 1; }   /* En el 10% ya está visible */
-  90% { opacity: 1; }   /* Se mantiene visible hasta el 90% */
-  100% { opacity: 0; }  /* Se desvanece al 100% */
+/* Mostrar la imagen activa */
+.slide.active {
+  opacity: 1;
 }
 
- .description-section {
-    margin: 50px auto 100px auto; 
-    /* ↑ margen superior de 50px, margen inferior de 100px */
-    padding: 60px 0; 
-    /* Quita la otra línea de padding: 100px; que está siendo sobrescrita */
-    width: 80%;
-    border-radius: 10px;
-    background: url('../imgs/FONDOS/Fondo piedra.png') no-repeat center center;
-    /* background-size: cover;  <-- Descomenta si quieres que se ajuste al contenedor */
-    text-align: center;
-    color: #333;
+/* Ajustar tamaño de imagen */
+.slide img {
+  width: 100%;
+  height: 100vh;
+  object-fit: cover;
 }
 
-  /* Contenedor interno para controlar el ancho del texto */
-  .description {
-    /* Ajusta el ancho para que el texto no sea demasiado ancho */
-    width: 60%;
-    /* Centra horizontalmente */
-    margin: 0 auto;
-    /* Espacio interno */
-    padding: 20px 0;
-  }
+/* -------------------------------------------------------------------------- */
 
-  .description p {
-    /* Ajusta el tamaño y el interlineado para una lectura agradable */
-    font-size: 1.2rem;
-    line-height: 1.5;
-    margin: 0;
-  }
+/* Sección de Descripción */
+.description-section {
+  width: 100%;
+  height: 300px;
+  background: url('../imgs/FONDOS/Fondo piedra.png') no-repeat center center;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 100px 0;
+}
+
+/* Contenedor del texto */
+.description-container {
+  width: 800px;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+/* Texto */
+.description-container p {
+  font-size: 1.25rem;
+  text-align: center;
+  font-family: 'Marcellus', serif;
+  line-height: 1.6;
+}
+
+
+/* -------------------------------------------------------------------------- */
+/* Sección de Exposición de Arte */
+.art-exhibit {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+}
+
+/* Contenedor de la imagen y contenido */
+.art-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+/* Imagen con efecto de zoom */
+.art-image-link {
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.art-image {
+  width: 100%;
+  height: 100%;
+  background: url('../imgs/Group 230 (1).png') no-repeat center center/cover;
+  transition: transform 0.5s ease-in-out;
+}
+
+/* Efecto zoom en hover */
+.art-image-link:hover .art-image {
+  transform: scale(1.1);
+}
+
+/* Contenido debajo de la imagen */
+.art-content {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 50%;
+  text-align: center;
+  padding: 3em;
+  color: white;
+  font-family: 'Marcellus', serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Título con hover */
+.art-title {
+  font-size: 2.5vw;
+  font-weight: 100;
+  text-decoration: none;
+  color: white;
+  transition: color 0.3s ease-in-out;
+}
+
+.art-title:hover {
+  color: #979329;
+}
+
+/* Texto */
+.art-text {
+  font-size: 1.2vw;
+  line-height: 1.6;
+  margin: 15px 0;
+}
+
+/* Botón */
+.art-button {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 1.2vw;
+  color: white;
+  text-decoration: none;
+  border: 2px solid white;
+  width: 300px;
+  margin: auto;
+  transition: background 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+/* Hover del botón */
+.art-button:hover {
+  background: #9a9468;
+  color: black;
+  border: 2px #9a9468 solid;
+}
+
+
+/* -------------------------------------------------------------------------- */
+
+/* Sección de Eventos */
+.event-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 100vh;
+  padding: 50px;
+}
+
+/* Columna Izquierda */
+.event-left {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Contenedor de la imagen con hover */
+.hover-image-container {
+  position: relative;
+  width: 80%;
+  height: 80%;
+  overflow: hidden;
+}
+
+/* Imágenes dentro del contenedor */
+.hover-img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: opacity 0.5s ease-in-out;
+}
+
+/* Imagen por defecto visible */
+.default-img {
+  opacity: 1;
+}
+
+/* Imagen hover oculta por defecto */
+.hover-img-active {
+  opacity: 0;
+}
+
+/* Efecto hover: Cambia de imagen */
+.hover-image-container:hover .default-img {
+  opacity: 0;
+}
+
+.hover-image-container:hover .hover-img-active {
+  opacity: 1;
+}
+
+/* Columna Derecha */
+.event-right {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around; /* Espaciado uniforme */
+  align-items: center;
+  text-align: center;
+  color: white;
+  font-family: 'Marcellus', serif;
+  padding: 50px;
+}
+
+/* Título con hover */
+.event-title {
+  font-size: 3vw;
+  font-weight: 100;
+  text-decoration: none;
+  color: white;
+  transition: color 0.3s ease-in-out;
+}
+
+.event-title:hover {
+  color: #979329;
+}
+
+/* Texto */
+.event-text {
+  font-size: 1.3vw;
+  line-height: 1.6;
+  max-width: 80%;
+}
+
+/* Botón */
+.event-button {
+  display: inline-block;
+  padding: 12px 24px;
+  font-size: 1.2vw;
+  color: white;
+  text-decoration: none;
+  border: 2px solid white;
+  width: 300px;
+  transition: background 0.3s ease-in-out, color 0.3s ease-in-out, border 0.3s ease-in-out;
+}
+
+/* Hover del botón */
+.event-button:hover {
+  background: #9a9468;
+  color: black;
+  border-color: #9a9468;
+}
+
+/* -------------------------------------------------------------------------- */
+
+
+/* -------------------------------------------------------------------------- */
+/* Sección de 3 columnas */
+.three-column-section {
+  display: flex;
+  justify-content: space-evenly; /* Espaciado equitativo */
+  align-items: start;
+  width: 100%;
+  height: auto;
+  padding: 6em;
+}
+
+/* Cada columna */
+.column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  color: white;
+  font-family: 'Marcellus', serif;
+}
+
+/* Imágenes */
+.column img {
+  width: auto; /* Ajusta según sea necesario */
+  height: 100px;
+  margin-bottom: 10px;
+}
+
+/* Texto */
+.column p {
+  font-size: 1.2vw;
+  margin: 0;
+}
+
+
+/* -------------------------------------------------------------------------- */
+/* Sección de Imagen Completa */
+.full-image-section {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+/* Imagen que ocupa toda la pantalla */
+.full-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* -------------------------------------------------------------------------- */
+/* -------------------------------------------------------------------------- */
+/* -------------------------------------------------------------------------- */
 button {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: rgba(0, 0, 0, 0.5);
-    color: white;
-    border: none;
-    padding: 10px;
-    cursor: pointer;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
 }
 
 .prev {
-    left: 10px;
+  left: 10px;
 }
 
 .next {
-    right: 10px;
+  right: 10px;
 }
+
 .card-container {
-    max-width: 1250px;
-    margin: 2rem auto;
-    position: relative;
-  }
-  
-  .image-container {
-    position: relative;
-    overflow: hidden;
-    border-radius: 8px;
-  }
-  
-  .hover-zoom {
-    width: 100%;
-    height: auto;
-    transition: transform 0.5s ease;
-    display: block;
-  }
-  
-  .image-container:hover .hover-zoom {
-    transform: scale(1.1);
-  }
-  
-  .content-overlay {
-    position: absolute;
-    bottom: 20px; /* Nueva posición inferior */
-    right: 20px; /* Nueva posición derecha */
-    text-align: right; /* Alineación a la derecha */
-    z-index: 2;
-    pointer-events: none; /* Añadido para todo el overlay */
-  }
+  max-width: 1250px;
+  margin: 2rem auto;
+  position: relative;
+}
 
-  .paragraph {
-    color: white;
-    margin: 10px 0;
-    font-size: 1.1em;
-    pointer-events: auto; /* Permitir interacción */
-  }
-  
-  .title-hover {
-    color: white;
-    font-size: 2.5em;
-    margin-bottom: 1rem;
-    transition: color 0.3s ease;
-  }
-  
-  .btn-hover {
-    background: transparent;
-    border: 2px solid white;
-    color: white;
-    padding: 12px 30px;
-    font-size: 1.1em;
-    cursor: pointer;
-    transition: all 0.3s ease;
-  }
-  
-  /* Efectos hover */
-  .title-hover:hover {
-    margin-bottom: 5px;
-    color: #ffd700; /* Cambiar por tu color deseado */
-  }
-  
-  .btn-hover:hover {
-    background: white;
-    color: #333;
-    border-color: transparent;
-  }
-  
-  /* Asegurar que el texto no se vea afectado por el zoom */
-  .content-overlay > * {
-    pointer-events: none;
-  }
-  
-  .btn-hover {
-    pointer-events: auto;
-  }
-  
-  .title-hover {
-    pointer-events: auto;
-  }
+.image-container {
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+.hover-zoom {
+  width: 100%;
+  height: auto;
+  transition: transform 0.5s ease;
+  display: block;
+}
+
+.image-container:hover .hover-zoom {
+  transform: scale(1.1);
+}
+
+.content-overlay {
+  position: absolute;
+  bottom: 20px;
+  /* Nueva posición inferior */
+  right: 20px;
+  /* Nueva posición derecha */
+  text-align: right;
+  /* Alineación a la derecha */
+  z-index: 2;
+  pointer-events: none;
+  /* Añadido para todo el overlay */
+}
+
+.paragraph {
+  color: white;
+  margin: 10px 0;
+  font-size: 1.1em;
+  pointer-events: auto;
+  /* Permitir interacción */
+}
+
+.title-hover {
+  color: white;
+  font-size: 2.5em;
+  margin-bottom: 1rem;
+  transition: color 0.3s ease;
+}
+
+.btn-hover {
+  background: transparent;
+  border: 2px solid white;
+  color: white;
+  padding: 12px 30px;
+  font-size: 1.1em;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+/* Efectos hover */
+.title-hover:hover {
+  margin-bottom: 5px;
+  color: #ffd700;
+  /* Cambiar por tu color deseado */
+}
+
+.btn-hover:hover {
+  background: white;
+  color: #333;
+  border-color: transparent;
+}
+
+/* Asegurar que el texto no se vea afectado por el zoom */
+.content-overlay>* {
+  pointer-events: none;
+}
+
+.btn-hover {
+  pointer-events: auto;
+}
+
+.title-hover {
+  pointer-events: auto;
+}
 
 
-  .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px;
-    margin-left: 250px;
-    
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  margin-left: 250px;
+
 }
 
 .image-section img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 5px;
-    
+  max-width: 100%;
+  height: auto;
+  border-radius: 5px;
+
 }
 
 .text-section {
-    color: aliceblue;
-    max-width: 500px;
-    padding: 20px;
+  color: aliceblue;
+  max-width: 500px;
+  padding: 20px;
 }
 
 h1 {
-    font-size: 2.5em;
-    margin-bottom: 20px;
-    font-family: 'Georgia', serif;
+  font-size: 2.5em;
+  margin-bottom: 20px;
+  font-family: 'Georgia', serif;
 }
 
 p {
-    font-size: 1em;
-    line-height: 1.5;
-    margin-bottom: 20px;
+  font-size: 1em;
+  line-height: 1.5;
+  margin-bottom: 20px;
 }
 
 .cta-button {
-    display: inline-block;
-    background-color: #FFC107; /* Cambia el color según tus preferencias */
-    color: #000;
-    padding: 10px 20px;
-    text-decoration: none;
-    border-radius: 5px;
-    transition: background-color 0.3s;
+  display: inline-block;
+  background-color: #FFC107;
+  /* Cambia el color según tus preferencias */
+  color: #000;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s;
 }
 
 .cta-button:hover {
-    background-color: #ff9800; /* Cambia el color al pasar el mouse */
+  background-color: #ff9800;
+  /* Cambia el color al pasar el mouse */
 }
 
 /*para el catering*/
 
 .catering {
-    display: flex;
-    justify-content: space-between;
-    padding: 50px;
-    background: #333;
+  display: flex;
+  justify-content: space-between;
+  padding: 50px;
+  background: #333;
 }
 
 .content {
-    width: 50%;
-    padding: 20px;
+  width: 50%;
+  padding: 20px;
 }
 
 .content h1 {
-    font-size: 48px;
-    margin-bottom: 20px;
+  font-size: 48px;
+  margin-bottom: 20px;
 }
 
 .content p {
-    font-size: 18px;
-    margin-bottom: 20px;
+  font-size: 18px;
+  margin-bottom: 20px;
 }
 
 .btn {
-    background-color: #ffcc00;
-    color: #333;
-    padding: 10px 20px;
-    text-decoration: none;
-    border-radius: 5px;
+  background-color: #ffcc00;
+  color: #333;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 5px;
 }
 
 .images {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    width: 45%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 45%;
 }
 
 .image {
-    background: #444;
-    height: 200px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
+  background: #444;
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
 }
 
 .image h2 {
-    position: absolute;
-    color: white;
-    font-size: 24px;
-    text-align: center;
+  position: absolute;
+  color: white;
+  font-size: 24px;
+  text-align: center;
 }
 
 .buffet {
-    background-image: url('../imgs/plato-frt.png');
-    background-size: cover;
+  background-image: url('../imgs/plato-frt.png');
+  background-size: cover;
 }
 
 .degustaciones {
-    background-image: url('../imgs/plat-postre.png');
-    background-size: cover;
+  background-image: url('../imgs/plat-postre.png');
+  background-size: cover;
 }
 
 /*nostros */
 
 .container-nosotros {
-    position: relative;
-    width: 100%;
-    height: 100vh;
-    background-image: url('../imgs/nosotros.png'); /* Añadir la URL de la imagen */
-    background-size: cover;
-    background-position: center;
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background-image: url('../imgs/nosotros.png');
+  /* Añadir la URL de la imagen */
+  background-size: cover;
+  background-position: center;
 }
 
 .overlay-nosotros {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: white;
-    text-align: center;
-    padding: 20px;
-    background: rgba(0, 0, 0, 0.5); /* Fondo oscuro semi-transparente */
-    border-radius: 10px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  text-align: center;
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.5);
+  /* Fondo oscuro semi-transparente */
+  border-radius: 10px;
 }
 
 h1 {
-    font-size: 3em;
-    margin-bottom: 20px;
+  font-size: 3em;
+  margin-bottom: 20px;
 }
 
 p {
-    font-size: 1.2em;
-    margin-bottom: 20px;
+  font-size: 1.2em;
+  margin-bottom: 20px;
 }
 
 .btn {
-    padding: 10px 20px;
-    background-color: #4CAF50; /* Color del botón */
-    color: white;
-    border: none;
-    border-radius: 5px;
-    text-decoration: none;
-    font-size: 1em;
-    transition: background-color 0.3s;
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  /* Color del botón */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  text-decoration: none;
+  font-size: 1em;
+  transition: background-color 0.3s;
 }
 
 .btn:hover {
-    background-color: #45a049; /* Color al pasar el ratón */
+  background-color: #45a049;
+  /* Color al pasar el ratón */
 }
 
 /*casi terminando*/
 
 .container-ult {
-    background-color: #333; /* Color de fondo de la sección */
-    color: white; /* Color del texto */
-    text-align: center; /* Centra el texto en los elementos del contenedor */
-    padding: 20px 0; /* Espaciado superior e inferior */
+  background-color: #333;
+  /* Color de fondo de la sección */
+  color: white;
+  /* Color del texto */
+  text-align: center;
+  /* Centra el texto en los elementos del contenedor */
+  padding: 20px 0;
+  /* Espaciado superior e inferior */
 }
 
 .header {
-    display: flex; /* Utiliza flexbox para alinear los elementos horizontalmente */
-    justify-content: center; /* Centra los elementos en el eje horizontal */
+  display: flex;
+  /* Utiliza flexbox para alinear los elementos horizontalmente */
+  justify-content: center;
+  /* Centra los elementos en el eje horizontal */
 }
 
 .icon {
-    margin: 0 20px; /* Espaciado lateral entre los iconos */
+  margin: 0 20px;
+  /* Espaciado lateral entre los iconos */
 }
 
 .icon img {
-    width: 60px; /* Ancho del icono */
-    height: auto; /* Mantiene la proporción del icono */
+  width: 60px;
+  /* Ancho del icono */
+  height: auto;
+  /* Mantiene la proporción del icono */
 }
 
 .icon p {
-    margin: 5px 0 0 0; /* Espaciado en la parte superior del texto */
+  margin: 5px 0 0 0;
+  /* Espaciado en la parte superior del texto */
+}
+
+h2 {
+  font-size: 3rem;
+}
+
+p {
+  font-size: 1.25rem;
+}
+
+li {
+  font-size: 1.25rem;
 }
